@@ -29,70 +29,60 @@ namespace SchoolLibraryManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnStudentForm = new System.Windows.Forms.Button();
+            this.btnBookForm = new System.Windows.Forms.Button();
+            this.btnLoginForm = new System.Windows.Forms.Button();
+            this.lblLoginUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnStudentForm
             // 
-            this.button1.Location = new System.Drawing.Point(96, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 175);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "학생 관리";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStudentForm.Location = new System.Drawing.Point(210, 152);
+            this.btnStudentForm.Name = "btnStudentForm";
+            this.btnStudentForm.Size = new System.Drawing.Size(206, 175);
+            this.btnStudentForm.TabIndex = 0;
+            this.btnStudentForm.Text = "학생 관리";
+            this.btnStudentForm.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBookForm
             // 
-            this.button2.Location = new System.Drawing.Point(336, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 175);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "도서 관리";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBookForm.Location = new System.Drawing.Point(450, 152);
+            this.btnBookForm.Name = "btnBookForm";
+            this.btnBookForm.Size = new System.Drawing.Size(206, 175);
+            this.btnBookForm.TabIndex = 1;
+            this.btnBookForm.Text = "도서 관리";
+            this.btnBookForm.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnLoginForm
             // 
-            this.button3.Location = new System.Drawing.Point(711, 500);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "로그인/로그아웃";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLoginForm.Location = new System.Drawing.Point(711, 500);
+            this.btnLoginForm.Name = "btnLoginForm";
+            this.btnLoginForm.Size = new System.Drawing.Size(112, 34);
+            this.btnLoginForm.TabIndex = 2;
+            this.btnLoginForm.Text = "로그인/로그아웃";
+            this.btnLoginForm.UseVisualStyleBackColor = true;
+            this.btnLoginForm.Click += new System.EventHandler(this.btnLoginForm_Click);
             // 
-            // label1
+            // lblLoginUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(572, 505);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Login : 000000";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(572, 135);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 175);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "대여, 반납";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblLoginUser.AutoSize = true;
+            this.lblLoginUser.Location = new System.Drawing.Point(533, 505);
+            this.lblLoginUser.Name = "lblLoginUser";
+            this.lblLoginUser.Size = new System.Drawing.Size(73, 25);
+            this.lblLoginUser.TabIndex = 3;
+            this.lblLoginUser.Text = "Login : ";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 546);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblLoginUser);
+            this.Controls.Add(this.btnLoginForm);
+            this.Controls.Add(this.btnBookForm);
+            this.Controls.Add(this.btnStudentForm);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "학생 도서관 관리";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,11 +90,10 @@ namespace SchoolLibraryManager
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnStudentForm;
+        private System.Windows.Forms.Button btnBookForm;
+        private System.Windows.Forms.Button btnLoginForm;
+        private System.Windows.Forms.Label lblLoginUser;
     }
 }
 

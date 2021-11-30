@@ -29,38 +29,38 @@ namespace SchoolLibraryManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddBook = new System.Windows.Forms.Button();
+            this.btnSearchBook = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtSearchBookForm = new System.Windows.Forms.TextBox();
+            this.lvwBook = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lblOverdueBook = new System.Windows.Forms.Label();
+            this.lblBorrowBook = new System.Windows.Forms.Label();
+            this.lblAllBook = new System.Windows.Forms.Label();
+            this.btnSearchStudent = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchStuBookForm = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnAddBook
             // 
-            this.button2.Location = new System.Drawing.Point(39, 659);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 34);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "도서 추가";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddBook.Location = new System.Drawing.Point(39, 659);
+            this.btnAddBook.Name = "btnAddBook";
+            this.btnAddBook.Size = new System.Drawing.Size(240, 34);
+            this.btnAddBook.TabIndex = 11;
+            this.btnAddBook.Text = "도서 추가";
+            this.btnAddBook.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSearchBook
             // 
-            this.button1.Location = new System.Drawing.Point(167, 462);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "검색";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearchBook.Location = new System.Drawing.Point(167, 462);
+            this.btnSearchBook.Name = "btnSearchBook";
+            this.btnSearchBook.Size = new System.Drawing.Size(112, 34);
+            this.btnSearchBook.TabIndex = 10;
+            this.btnSearchBook.Text = "검색";
+            this.btnSearchBook.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -71,27 +71,27 @@ namespace SchoolLibraryManager
             this.label1.TabIndex = 9;
             this.label1.Text = "도서명/ISBN";
             // 
-            // textBox1
+            // txtSearchBookForm
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 425);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 31);
-            this.textBox1.TabIndex = 8;
+            this.txtSearchBookForm.Location = new System.Drawing.Point(39, 425);
+            this.txtSearchBookForm.Name = "txtSearchBookForm";
+            this.txtSearchBookForm.Size = new System.Drawing.Size(240, 31);
+            this.txtSearchBookForm.TabIndex = 8;
             // 
-            // listView1
+            // lvwBook
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(328, 63);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(791, 630);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvwBook.HideSelection = false;
+            this.lvwBook.Location = new System.Drawing.Point(328, 63);
+            this.lvwBook.Name = "lvwBook";
+            this.lvwBook.Size = new System.Drawing.Size(791, 630);
+            this.lvwBook.TabIndex = 7;
+            this.lvwBook.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblOverdueBook);
+            this.groupBox1.Controls.Add(this.lblBorrowBook);
+            this.groupBox1.Controls.Add(this.lblAllBook);
             this.groupBox1.Location = new System.Drawing.Point(39, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(240, 213);
@@ -99,41 +99,41 @@ namespace SchoolLibraryManager
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "도서현황";
             // 
-            // label5
+            // lblOverdueBook
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(172, 25);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "연체 중인 도서 수 : ";
+            this.lblOverdueBook.AutoSize = true;
+            this.lblOverdueBook.Location = new System.Drawing.Point(17, 156);
+            this.lblOverdueBook.Name = "lblOverdueBook";
+            this.lblOverdueBook.Size = new System.Drawing.Size(172, 25);
+            this.lblOverdueBook.TabIndex = 8;
+            this.lblOverdueBook.Text = "연체 중인 도서 수 : ";
             // 
-            // label4
+            // lblBorrowBook
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "대출 중인 도서 수 : ";
+            this.lblBorrowBook.AutoSize = true;
+            this.lblBorrowBook.Location = new System.Drawing.Point(17, 119);
+            this.lblBorrowBook.Name = "lblBorrowBook";
+            this.lblBorrowBook.Size = new System.Drawing.Size(172, 25);
+            this.lblBorrowBook.TabIndex = 7;
+            this.lblBorrowBook.Text = "대출 중인 도서 수 : ";
             // 
-            // label2
+            // lblAllBook
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "전체 도서 수 : ";
+            this.lblAllBook.AutoSize = true;
+            this.lblAllBook.Location = new System.Drawing.Point(17, 44);
+            this.lblAllBook.Name = "lblAllBook";
+            this.lblAllBook.Size = new System.Drawing.Size(130, 25);
+            this.lblAllBook.TabIndex = 5;
+            this.lblAllBook.Text = "전체 도서 수 : ";
             // 
-            // button3
+            // btnSearchStudent
             // 
-            this.button3.Location = new System.Drawing.Point(167, 355);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 34);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "검색";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearchStudent.Location = new System.Drawing.Point(167, 355);
+            this.btnSearchStudent.Name = "btnSearchStudent";
+            this.btnSearchStudent.Size = new System.Drawing.Size(112, 34);
+            this.btnSearchStudent.TabIndex = 14;
+            this.btnSearchStudent.Text = "검색";
+            this.btnSearchStudent.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -144,26 +144,26 @@ namespace SchoolLibraryManager
             this.label3.TabIndex = 13;
             this.label3.Text = "학번/이름";
             // 
-            // textBox2
+            // txtSearchStuBookForm
             // 
-            this.textBox2.Location = new System.Drawing.Point(39, 318);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 31);
-            this.textBox2.TabIndex = 12;
+            this.txtSearchStuBookForm.Location = new System.Drawing.Point(39, 318);
+            this.txtSearchStuBookForm.Name = "txtSearchStuBookForm";
+            this.txtSearchStuBookForm.Size = new System.Drawing.Size(240, 31);
+            this.txtSearchStuBookForm.TabIndex = 12;
             // 
             // BookListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSearchStudent);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtSearchStuBookForm);
+            this.Controls.Add(this.btnAddBook);
+            this.Controls.Add(this.btnSearchBook);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.txtSearchBookForm);
+            this.Controls.Add(this.lvwBook);
             this.Controls.Add(this.groupBox1);
             this.Name = "BookListForm";
             this.Text = "BookListForm";
@@ -176,17 +176,17 @@ namespace SchoolLibraryManager
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddBook;
+        private System.Windows.Forms.Button btnSearchBook;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox txtSearchBookForm;
+        private System.Windows.Forms.ListView lvwBook;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblOverdueBook;
+        private System.Windows.Forms.Label lblBorrowBook;
+        private System.Windows.Forms.Label lblAllBook;
+        private System.Windows.Forms.Button btnSearchStudent;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchStuBookForm;
     }
 }

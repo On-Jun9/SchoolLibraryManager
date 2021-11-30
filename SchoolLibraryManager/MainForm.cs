@@ -17,5 +17,10 @@ namespace SchoolLibraryManager
             InitializeComponent();
         }
 
+        private void btnLoginForm_Click(object sender, EventArgs e)
+        {
+            UserSignForm userSignForm = new UserSignForm();
+            userSignForm.ShowDialog();
+        }
     }
 }
