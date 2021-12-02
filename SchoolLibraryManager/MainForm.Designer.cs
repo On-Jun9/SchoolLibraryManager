@@ -37,27 +37,30 @@ namespace SchoolLibraryManager
             // 
             // btnStudentForm
             // 
-            this.btnStudentForm.Location = new System.Drawing.Point(210, 152);
+            this.btnStudentForm.Location = new System.Drawing.Point(149, 95);
+            this.btnStudentForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStudentForm.Name = "btnStudentForm";
-            this.btnStudentForm.Size = new System.Drawing.Size(206, 175);
+            this.btnStudentForm.Size = new System.Drawing.Size(144, 105);
             this.btnStudentForm.TabIndex = 0;
             this.btnStudentForm.Text = "학생 관리";
             this.btnStudentForm.UseVisualStyleBackColor = true;
             // 
             // btnBookForm
             // 
-            this.btnBookForm.Location = new System.Drawing.Point(450, 152);
+            this.btnBookForm.Location = new System.Drawing.Point(306, 95);
+            this.btnBookForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBookForm.Name = "btnBookForm";
-            this.btnBookForm.Size = new System.Drawing.Size(206, 175);
+            this.btnBookForm.Size = new System.Drawing.Size(144, 105);
             this.btnBookForm.TabIndex = 1;
             this.btnBookForm.Text = "도서 관리";
             this.btnBookForm.UseVisualStyleBackColor = true;
             // 
             // btnLoginForm
             // 
-            this.btnLoginForm.Location = new System.Drawing.Point(711, 500);
+            this.btnLoginForm.Location = new System.Drawing.Point(500, 293);
+            this.btnLoginForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoginForm.Name = "btnLoginForm";
-            this.btnLoginForm.Size = new System.Drawing.Size(112, 34);
+            this.btnLoginForm.Size = new System.Drawing.Size(78, 25);
             this.btnLoginForm.TabIndex = 2;
             this.btnLoginForm.Text = "로그인/로그아웃";
             this.btnLoginForm.UseVisualStyleBackColor = true;
@@ -66,21 +69,23 @@ namespace SchoolLibraryManager
             // lblLoginUser
             // 
             this.lblLoginUser.AutoSize = true;
-            this.lblLoginUser.Location = new System.Drawing.Point(533, 505);
+            this.lblLoginUser.Location = new System.Drawing.Point(380, 298);
+            this.lblLoginUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoginUser.Name = "lblLoginUser";
-            this.lblLoginUser.Size = new System.Drawing.Size(73, 25);
+            this.lblLoginUser.Size = new System.Drawing.Size(48, 15);
             this.lblLoginUser.TabIndex = 3;
             this.lblLoginUser.Text = "Login : ";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 546);
+            this.ClientSize = new System.Drawing.Size(604, 331);
             this.Controls.Add(this.lblLoginUser);
             this.Controls.Add(this.btnLoginForm);
             this.Controls.Add(this.btnBookForm);
             this.Controls.Add(this.btnStudentForm);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "학생 도서관 관리";
             this.ResumeLayout(false);
