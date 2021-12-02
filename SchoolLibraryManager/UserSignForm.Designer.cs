@@ -39,7 +39,7 @@ namespace SchoolLibraryManager
             // txtUserId
             // 
             this.txtUserId.Location = new System.Drawing.Point(101, 31);
-            this.txtUserId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserId.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(196, 23);
             this.txtUserId.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace SchoolLibraryManager
             // txtUserPwd
             // 
             this.txtUserPwd.Location = new System.Drawing.Point(101, 64);
-            this.txtUserPwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserPwd.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserPwd.Name = "txtUserPwd";
             this.txtUserPwd.Size = new System.Drawing.Size(196, 23);
             this.txtUserPwd.TabIndex = 2;
@@ -75,12 +75,13 @@ namespace SchoolLibraryManager
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(217, 99);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(78, 25);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // UserSignForm
             // 
@@ -93,10 +94,11 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUserId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserSignForm";
-            this.Text = "UserSignForm";
+            this.Text = "로그인";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserSignForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
