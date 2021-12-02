@@ -38,7 +38,7 @@ namespace SchoolLibraryManager
             // btnStudentForm
             // 
             this.btnStudentForm.Location = new System.Drawing.Point(149, 95);
-            this.btnStudentForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStudentForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudentForm.Name = "btnStudentForm";
             this.btnStudentForm.Size = new System.Drawing.Size(144, 105);
             this.btnStudentForm.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace SchoolLibraryManager
             // btnBookForm
             // 
             this.btnBookForm.Location = new System.Drawing.Point(306, 95);
-            this.btnBookForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBookForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookForm.Name = "btnBookForm";
             this.btnBookForm.Size = new System.Drawing.Size(144, 105);
             this.btnBookForm.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace SchoolLibraryManager
             // btnLoginForm
             // 
             this.btnLoginForm.Location = new System.Drawing.Point(500, 293);
-            this.btnLoginForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoginForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginForm.Name = "btnLoginForm";
             this.btnLoginForm.Size = new System.Drawing.Size(78, 25);
             this.btnLoginForm.TabIndex = 2;
@@ -85,9 +85,11 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.btnLoginForm);
             this.Controls.Add(this.btnBookForm);
             this.Controls.Add(this.btnStudentForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "학생 도서관 관리";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
