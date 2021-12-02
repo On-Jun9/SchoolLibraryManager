@@ -181,6 +181,7 @@ namespace SchoolLibraryManager
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookListForm";
             this.Text = "BookListForm";
+            this.Load += new System.EventHandler(this.BookListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

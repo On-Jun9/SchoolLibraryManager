@@ -16,5 +16,9 @@ namespace SchoolLibraryManager
         {
             InitializeComponent();
         }
+        private void BookListForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace SchoolLibraryManager
             this.btnStudentForm.TabIndex = 0;
             this.btnStudentForm.Text = "학생 관리";
             this.btnStudentForm.UseVisualStyleBackColor = true;
+            this.btnStudentForm.Click += new System.EventHandler(this.btnStudentForm_Click);
             // 
             // btnBookForm
             // 
