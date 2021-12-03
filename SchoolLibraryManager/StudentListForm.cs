@@ -19,13 +19,13 @@ namespace SchoolLibraryManager
             InitializeComponent();
         }
 
-        public ListView listView { get; set; }
+        //public ListView listView { get; set; }
         
-        public StudentListForm(ListView listView)
-        {
-            this.listView = listView;
-            InitializeComponent();
-        }
+        //public StudentListForm(ListView listView)
+        //{
+        //    this.listView = listView;
+        //    InitializeComponent();
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -133,15 +133,8 @@ namespace SchoolLibraryManager
                 if (deleteResult == DialogResult.OK)
                 {
                     int deleteSuccess = myDB.deleteStuService(selectId, selectName);
-                    if (deleteSuccess == 0)
-                    {
-                        MessageBox.Show("삭제 되었습니다.", "삭제완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        StudentListForm_Load(null, EventArgs.Empty);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"{deleteSuccess}삭제 실패 하였습니다.", "삭제실패", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show("삭제 되었습니다.", "삭제완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    StudentListForm_Load(null, EventArgs.Empty);
                 }
 
                 else if (deleteResult == DialogResult.Cancel)

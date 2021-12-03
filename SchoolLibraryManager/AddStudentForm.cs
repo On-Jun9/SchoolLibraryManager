@@ -126,7 +126,7 @@ namespace SchoolLibraryManager
 
             else if (flag == "modify")//수정시
             {
-                int modifyVal = myDB.ModifyService(formData);
+                int modifyVal = myDB.ModifyStuService(formData);
                 if (modifyVal == 0)
                 {
                     MessageBox.Show($"수정 실패!", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);

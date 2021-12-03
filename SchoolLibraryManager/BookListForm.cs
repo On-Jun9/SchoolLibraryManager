@@ -63,31 +63,79 @@ namespace SchoolLibraryManager
             }
         }
 
+        private void tsrModi_Click(object sender, EventArgs e)
+        {
+            AddBookForm addBookForm = new AddBookForm(selectIsbn, selectName);
+            if (addBookForm.ShowDialog() == DialogResult.OK)
+            {
+                BookListForm_Load(null, EventArgs.Empty);
+            }
+        }
+
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            AddBookForm addBookForm = new AddBookForm();
+            if (addBookForm.ShowDialog() == DialogResult.OK)
+            {
+                BookListForm_Load(null, EventArgs.Empty);
+            }
+        }
+
+        private void tsrBookInfo_Click(object sender, EventArgs e)
+        {
+            BorrowReturnForm borrowReturnForm = new BorrowReturnForm(selectIsbn, selectName);
+            borrowReturnForm.ShowDialog();
+        }
+
+        private void tsrDele_Click(object sender, EventArgs e)
+        {
+            if (this.lvwBook.SelectedItems.Count == 1)
+            {
+                MyDB myDB = new MyDB();
+                myDB.deleteStuService(selectIsbn, selectName);
+                DialogResult deleteResult = MessageBox.Show($"선택한 도서가 삭제됩니다", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (deleteResult == DialogResult.OK)
+                {
+                    int deleteSuccess = myDB.deleteBookService(selectIsbn);
+                    MessageBox.Show("삭제 되었습니다.", "삭제완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BookListForm_Load(null, EventArgs.Empty);
+                }
+
+                else if (deleteResult == DialogResult.Cancel)
+                {
+                }
+            }
+        }
+
         private void lvwBook_MouseClick(object sender, MouseEventArgs e)
         {
-            var focusedItem = this.lvwBook.FocusedItem;
-            if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+            if (e.Button == MouseButtons.Right && this.lvwBook.FocusedItem.Bounds.Contains(e.Location) == true)
             {
-
-                if (this.lvwBook.SelectedItems.Count > 1)
-                {
-                    cmsBookMenu2.Show(Cursor.Position);
-                }
-                else if (this.lvwBook.SelectedItems.Count != 0)
-                {
-                    cmsBookMenu.Show(Cursor.Position);
-                    int SelectRow = this.lvwBook.SelectedItems[0].Index;
-
-                    selectIsbn = this.lvwBook.Items[SelectRow].SubItems[0].Text;
-                    selectName = this.lvwBook.Items[SelectRow].SubItems[1].Text;
-
-                }
-                else
+                var focusedItem = this.lvwBook.FocusedItem;
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
                 {
 
-                }
+                    if (this.lvwBook.SelectedItems.Count > 1)
+                    {
+                        //cmsBookMenu.Show(Cursor.Position);
+                    }
+                    else if (this.lvwBook.SelectedItems.Count != 0)
+                    {
+                        cmsBookMenu.Show(Cursor.Position);
+                        int SelectRow = this.lvwBook.SelectedItems[0].Index;
 
+                        selectIsbn = this.lvwBook.Items[SelectRow].SubItems[0].Text;
+                        selectName = this.lvwBook.Items[SelectRow].SubItems[1].Text;
+
+                    }
+                    else
+                    {
+
+                    }
+
+                }
             }
+            
         }
     }
 }
