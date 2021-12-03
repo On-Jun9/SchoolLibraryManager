@@ -55,6 +55,7 @@ namespace SchoolLibraryManager
             this.btnBookForm.TabIndex = 1;
             this.btnBookForm.Text = "도서 관리";
             this.btnBookForm.UseVisualStyleBackColor = true;
+            this.btnBookForm.Click += new System.EventHandler(this.btnBookForm_Click);
             // 
             // btnLoginForm
             // 

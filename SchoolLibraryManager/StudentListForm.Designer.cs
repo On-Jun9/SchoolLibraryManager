@@ -185,25 +185,25 @@ namespace SchoolLibraryManager
             this.tsrModi,
             this.tsrDele});
             this.cmsStudentMenu.Name = "cmsStudentMenu";
-            this.cmsStudentMenu.Size = new System.Drawing.Size(123, 70);
+            this.cmsStudentMenu.Size = new System.Drawing.Size(181, 92);
             // 
             // tsrBook
             // 
             this.tsrBook.Name = "tsrBook";
-            this.tsrBook.Size = new System.Drawing.Size(122, 22);
-            this.tsrBook.Text = "도서메뉴";
+            this.tsrBook.Size = new System.Drawing.Size(180, 22);
+            this.tsrBook.Text = "대여/반납";
             this.tsrBook.Click += new System.EventHandler(this.tsrBook_Click);
             // 
             // tsrModi
             // 
             this.tsrModi.Name = "tsrModi";
-            this.tsrModi.Size = new System.Drawing.Size(122, 22);
+            this.tsrModi.Size = new System.Drawing.Size(180, 22);
             this.tsrModi.Text = "수정";
             // 
             // tsrDele
             // 
             this.tsrDele.Name = "tsrDele";
-            this.tsrDele.Size = new System.Drawing.Size(122, 22);
+            this.tsrDele.Size = new System.Drawing.Size(180, 22);
             this.tsrDele.Text = "삭제";
             // 
             // txtSearchStuStuForm

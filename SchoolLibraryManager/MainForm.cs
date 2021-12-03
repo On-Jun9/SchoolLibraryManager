@@ -58,5 +58,11 @@ namespace SchoolLibraryManager
             StudentListForm studentListForm = new StudentListForm();
             studentListForm.ShowDialog();
         }
+
+        private void btnBookForm_Click(object sender, EventArgs e)
+        {
+            BookListForm bookListForm = new BookListForm();
+            bookListForm.ShowDialog();
+        }
     }
 }

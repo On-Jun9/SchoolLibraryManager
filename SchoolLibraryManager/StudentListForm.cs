@@ -78,7 +78,6 @@ namespace SchoolLibraryManager
 
         private void lvwStudentList_MouseClick(object sender, MouseEventArgs e)
         {
-            bool match = false;
             if (e.Button == MouseButtons.Right && this.lvwStudentList.FocusedItem.Bounds.Contains(e.Location) == true)
             {
                 var focusedItem = this.lvwStudentList.FocusedItem;
