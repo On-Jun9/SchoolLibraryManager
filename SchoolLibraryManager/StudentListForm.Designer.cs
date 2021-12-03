@@ -31,6 +31,7 @@ namespace SchoolLibraryManager
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblexpelledStudent = new System.Windows.Forms.Label();
             this.lblGraduatedStudent = new System.Windows.Forms.Label();
             this.lblLeaveStudent = new System.Windows.Forms.Label();
             this.lblAttendingStudent = new System.Windows.Forms.Label();
@@ -53,16 +54,14 @@ namespace SchoolLibraryManager
             this.btnSearchStudent = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnStuReload = new System.Windows.Forms.Button();
-            this.cmsStudentMenu2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsrDele2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.cmsStudentMenu.SuspendLayout();
-            this.cmsStudentMenu2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblexpelledStudent);
             this.groupBox1.Controls.Add(this.lblGraduatedStudent);
             this.groupBox1.Controls.Add(this.lblLeaveStudent);
             this.groupBox1.Controls.Add(this.lblAttendingStudent);
@@ -71,15 +70,25 @@ namespace SchoolLibraryManager
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(168, 128);
+            this.groupBox1.Size = new System.Drawing.Size(168, 145);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생현황";
             // 
+            // lblexpelledStudent
+            // 
+            this.lblexpelledStudent.AutoSize = true;
+            this.lblexpelledStudent.Location = new System.Drawing.Point(12, 118);
+            this.lblexpelledStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblexpelledStudent.Name = "lblexpelledStudent";
+            this.lblexpelledStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblexpelledStudent.TabIndex = 9;
+            this.lblexpelledStudent.Text = "재적 학생 수 : ";
+            // 
             // lblGraduatedStudent
             // 
             this.lblGraduatedStudent.AutoSize = true;
-            this.lblGraduatedStudent.Location = new System.Drawing.Point(12, 94);
+            this.lblGraduatedStudent.Location = new System.Drawing.Point(12, 95);
             this.lblGraduatedStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGraduatedStudent.Name = "lblGraduatedStudent";
             this.lblGraduatedStudent.Size = new System.Drawing.Size(86, 15);
@@ -89,7 +98,7 @@ namespace SchoolLibraryManager
             // lblLeaveStudent
             // 
             this.lblLeaveStudent.AutoSize = true;
-            this.lblLeaveStudent.Location = new System.Drawing.Point(12, 71);
+            this.lblLeaveStudent.Location = new System.Drawing.Point(12, 72);
             this.lblLeaveStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLeaveStudent.Name = "lblLeaveStudent";
             this.lblLeaveStudent.Size = new System.Drawing.Size(86, 15);
@@ -199,16 +208,18 @@ namespace SchoolLibraryManager
             this.tsrModi.Name = "tsrModi";
             this.tsrModi.Size = new System.Drawing.Size(180, 22);
             this.tsrModi.Text = "수정";
+            this.tsrModi.Click += new System.EventHandler(this.tsrModi_Click);
             // 
             // tsrDele
             // 
             this.tsrDele.Name = "tsrDele";
             this.tsrDele.Size = new System.Drawing.Size(180, 22);
             this.tsrDele.Text = "삭제";
+            this.tsrDele.Click += new System.EventHandler(this.tsrDele_Click);
             // 
             // txtSearchStuStuForm
             // 
-            this.txtSearchStuStuForm.Location = new System.Drawing.Point(27, 193);
+            this.txtSearchStuStuForm.Location = new System.Drawing.Point(27, 223);
             this.txtSearchStuStuForm.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchStuStuForm.Name = "txtSearchStuStuForm";
             this.txtSearchStuStuForm.Size = new System.Drawing.Size(169, 23);
@@ -218,7 +229,7 @@ namespace SchoolLibraryManager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 176);
+            this.label1.Location = new System.Drawing.Point(27, 206);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 15);
@@ -227,7 +238,7 @@ namespace SchoolLibraryManager
             // 
             // btnSearchStudent
             // 
-            this.btnSearchStudent.Location = new System.Drawing.Point(115, 220);
+            this.btnSearchStudent.Location = new System.Drawing.Point(115, 250);
             this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
             this.btnSearchStudent.Size = new System.Drawing.Size(80, 30);
@@ -258,19 +269,6 @@ namespace SchoolLibraryManager
             this.btnStuReload.UseVisualStyleBackColor = true;
             this.btnStuReload.Click += new System.EventHandler(this.btnStuReload_Click);
             // 
-            // cmsStudentMenu2
-            // 
-            this.cmsStudentMenu2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsrDele2});
-            this.cmsStudentMenu2.Name = "cmsStudentMenu2";
-            this.cmsStudentMenu2.Size = new System.Drawing.Size(99, 26);
-            // 
-            // tsrDele2
-            // 
-            this.tsrDele2.Name = "tsrDele2";
-            this.tsrDele2.Size = new System.Drawing.Size(98, 22);
-            this.tsrDele2.Text = "삭제";
-            // 
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
@@ -299,7 +297,6 @@ namespace SchoolLibraryManager
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.cmsStudentMenu.ResumeLayout(false);
-            this.cmsStudentMenu2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,8 +330,7 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ToolStripMenuItem tsrBook;
         private System.Windows.Forms.ToolStripMenuItem tsrModi;
         private System.Windows.Forms.ToolStripMenuItem tsrDele;
-        private System.Windows.Forms.ContextMenuStrip cmsStudentMenu2;
-        private System.Windows.Forms.ToolStripMenuItem tsrDele2;
         private System.Windows.Forms.Label lblSearchLabel;
+        private System.Windows.Forms.Label lblexpelledStudent;
     }
 }
