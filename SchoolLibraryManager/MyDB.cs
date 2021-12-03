@@ -710,10 +710,53 @@ namespace SchoolLibraryManager
                 OracleCommand cmd = new OracleCommand($"DELETE FROM loan WHERE book_isbn = {parsem} AND stu_id = {parseid}", conn);
                 cmd.ExecuteNonQuery();
             }
+            conn.Dispose();
+            conn.Close();
+
+        }
+        public int checkBook(String book_isbn)
+        {
+            //MessageBox.Show($"{book_isbn}", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            int i=0;
+            Int64.TryParse(book_isbn, out Int64 book__);
+            Int64.TryParse(book_isbn.Trim(), out Int64 parseisbn);
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            OracleDataAdapter adapter = new OracleDataAdapter($"SELECT COUNT(*) FROM loan WHERE book_isbn = {book__}",conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+
+            DataTable majorDT = ds.Tables[0];
+            foreach (DataRow row in majorDT.Rows)
+            {
+                if (row["COUNT(*)"]+""!="0")
+                {
+                    i = 1;
+                }
+                
+            }
 
 
-
-
+            conn.Dispose();
+            conn.Close();
+            return i;
+        }
+        public ArrayList loanTOstu(String book_isbn)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            Int64.TryParse(book_isbn, out Int64 parseisbn);
+            OracleCommand cmd = new OracleCommand($"SELECT stu_id,stu_name FROM student WHERE stu_id = (SELECT stu_id FROM loan WHERE book_isbn ={parseisbn})", conn);       
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ArrayList lvtList = new ArrayList();
+            while (rdr.Read())
+            {
+                lvtList.Add(rdr.GetInt64(0) +"");
+                lvtList.Add(rdr["stu_name"] as string);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvtList;
         }
 
     }

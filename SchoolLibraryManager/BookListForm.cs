@@ -83,8 +83,30 @@ namespace SchoolLibraryManager
 
         private void tsrBookInfo_Click(object sender, EventArgs e)
         {
-            BorrowReturnForm borrowReturnForm = new BorrowReturnForm(selectIsbn, selectName);
-            borrowReturnForm.ShowDialog();
+            MyDB myDB = new MyDB();
+            int SelectRow = this.lvwBook.SelectedItems[0].Index;
+            selectIsbn = this.lvwBook.Items[SelectRow].SubItems[0].Text;
+            if (myDB.checkBook(selectIsbn) == 1)
+            {
+                ArrayList al = myDB.loanTOstu(selectIsbn);
+                String _userId = al[0] + "";
+                String _username = al[1] + "";
+                BorrowReturnForm borrowReturnForm = new BorrowReturnForm(_userId, _username);
+                if (borrowReturnForm.ShowDialog() == DialogResult.OK)
+                {
+                    BookListForm_Load(null, EventArgs.Empty);
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show($"대여중이 아닌 도서입니다\n학생리스트로 이동하시겠습니까?", "대여", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DialogResult= DialogResult.OK;
+                    this.Close();
+                }
+            }
+            
         }
 
         private void tsrDele_Click(object sender, EventArgs e)

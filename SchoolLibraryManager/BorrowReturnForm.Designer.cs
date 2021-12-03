@@ -54,6 +54,7 @@ namespace SchoolLibraryManager
             this.chBookCount = new System.Windows.Forms.ColumnHeader();
             this.chBookCate = new System.Windows.Forms.ColumnHeader();
             this.btnReload = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@ namespace SchoolLibraryManager
             // lblOverCount
             // 
             this.lblOverCount.AutoSize = true;
-            this.lblOverCount.Location = new System.Drawing.Point(266, 58);
+            this.lblOverCount.Location = new System.Drawing.Point(332, 58);
             this.lblOverCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOverCount.Name = "lblOverCount";
             this.lblOverCount.Size = new System.Drawing.Size(50, 15);
@@ -85,7 +86,7 @@ namespace SchoolLibraryManager
             // lblBorrowCount
             // 
             this.lblBorrowCount.AutoSize = true;
-            this.lblBorrowCount.Location = new System.Drawing.Point(266, 32);
+            this.lblBorrowCount.Location = new System.Drawing.Point(332, 32);
             this.lblBorrowCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBorrowCount.Name = "lblBorrowCount";
             this.lblBorrowCount.Size = new System.Drawing.Size(54, 15);
@@ -114,7 +115,7 @@ namespace SchoolLibraryManager
             // 
             // btnBookSave
             // 
-            this.btnBookSave.Location = new System.Drawing.Point(465, 602);
+            this.btnBookSave.Location = new System.Drawing.Point(465, 626);
             this.btnBookSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookSave.Name = "btnBookSave";
             this.btnBookSave.Size = new System.Drawing.Size(93, 30);
@@ -126,7 +127,7 @@ namespace SchoolLibraryManager
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 105);
+            this.label3.Location = new System.Drawing.Point(12, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 7;
@@ -135,7 +136,7 @@ namespace SchoolLibraryManager
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 355);
+            this.label4.Location = new System.Drawing.Point(12, 379);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 15);
             this.label4.TabIndex = 8;
@@ -152,7 +153,7 @@ namespace SchoolLibraryManager
             this.lvwBRStuList.FullRowSelect = true;
             this.lvwBRStuList.GridLines = true;
             this.lvwBRStuList.HideSelection = false;
-            this.lvwBRStuList.Location = new System.Drawing.Point(12, 372);
+            this.lvwBRStuList.Location = new System.Drawing.Point(12, 396);
             this.lvwBRStuList.Margin = new System.Windows.Forms.Padding(2);
             this.lvwBRStuList.MultiSelect = false;
             this.lvwBRStuList.Name = "lvwBRStuList";
@@ -189,7 +190,7 @@ namespace SchoolLibraryManager
             // 
             // btnBookCancle
             // 
-            this.btnBookCancle.Location = new System.Drawing.Point(368, 602);
+            this.btnBookCancle.Location = new System.Drawing.Point(368, 626);
             this.btnBookCancle.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookCancle.Name = "btnBookCancle";
             this.btnBookCancle.Size = new System.Drawing.Size(93, 30);
@@ -212,7 +213,7 @@ namespace SchoolLibraryManager
             this.lvwBRBookList.FullRowSelect = true;
             this.lvwBRBookList.GridLines = true;
             this.lvwBRBookList.HideSelection = false;
-            this.lvwBRBookList.Location = new System.Drawing.Point(12, 122);
+            this.lvwBRBookList.Location = new System.Drawing.Point(12, 146);
             this.lvwBRBookList.Margin = new System.Windows.Forms.Padding(2);
             this.lvwBRBookList.MultiSelect = false;
             this.lvwBRBookList.Name = "lvwBRBookList";
@@ -261,7 +262,7 @@ namespace SchoolLibraryManager
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(12, 602);
+            this.btnReload.Location = new System.Drawing.Point(12, 626);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(93, 30);
@@ -270,11 +271,21 @@ namespace SchoolLibraryManager
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(421, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "↑ 더블클릭하여 이동 ↓";
+            // 
             // BorrowReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 643);
+            this.ClientSize = new System.Drawing.Size(578, 664);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lvwBRBookList);
             this.Controls.Add(this.btnBookCancle);
@@ -285,7 +296,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowReturnForm";
-            this.Text = "BorrowReturnForm";
+            this.Text = "대여 / 반납";
             this.Load += new System.EventHandler(this.BorrowReturnForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -325,5 +336,6 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ColumnHeader chBookCate;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Label testestest;
+        private System.Windows.Forms.Label label1;
     }
 }

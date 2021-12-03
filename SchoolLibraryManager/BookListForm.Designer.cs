@@ -51,7 +51,6 @@ namespace SchoolLibraryManager
             this.btnBookReload = new System.Windows.Forms.Button();
             this.cmsBookMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsrBookInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsrBook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrModi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrDele = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
@@ -227,36 +226,29 @@ namespace SchoolLibraryManager
             // 
             this.cmsBookMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsrBookInfo,
-            this.tsrBook,
             this.tsrModi,
             this.tsrDele});
             this.cmsBookMenu.Name = "cmsStudentMenu";
-            this.cmsBookMenu.Size = new System.Drawing.Size(136, 92);
+            this.cmsBookMenu.Size = new System.Drawing.Size(123, 70);
             // 
             // tsrBookInfo
             // 
             this.tsrBookInfo.Name = "tsrBookInfo";
-            this.tsrBookInfo.Size = new System.Drawing.Size(135, 22);
-            this.tsrBookInfo.Text = "대여 / 반납";
+            this.tsrBookInfo.Size = new System.Drawing.Size(122, 22);
+            this.tsrBookInfo.Text = "반납하기";
             this.tsrBookInfo.Click += new System.EventHandler(this.tsrBookInfo_Click);
-            // 
-            // tsrBook
-            // 
-            this.tsrBook.Name = "tsrBook";
-            this.tsrBook.Size = new System.Drawing.Size(135, 22);
-            this.tsrBook.Text = "도서메뉴";
             // 
             // tsrModi
             // 
             this.tsrModi.Name = "tsrModi";
-            this.tsrModi.Size = new System.Drawing.Size(135, 22);
+            this.tsrModi.Size = new System.Drawing.Size(122, 22);
             this.tsrModi.Text = "수정";
             this.tsrModi.Click += new System.EventHandler(this.tsrModi_Click);
             // 
             // tsrDele
             // 
             this.tsrDele.Name = "tsrDele";
-            this.tsrDele.Size = new System.Drawing.Size(135, 22);
+            this.tsrDele.Size = new System.Drawing.Size(122, 22);
             this.tsrDele.Text = "삭제";
             this.tsrDele.Click += new System.EventHandler(this.tsrDele_Click);
             // 
@@ -275,7 +267,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookListForm";
-            this.Text = "BookListForm";
+            this.Text = "도서 관리";
             this.Load += new System.EventHandler(this.BookListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -307,7 +299,6 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ColumnHeader chBookCate;
         private System.Windows.Forms.Button btnBookReload;
         private System.Windows.Forms.ContextMenuStrip cmsBookMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsrBook;
         private System.Windows.Forms.ToolStripMenuItem tsrModi;
         private System.Windows.Forms.ToolStripMenuItem tsrDele;
         private System.Windows.Forms.ToolStripMenuItem tsrBookInfo;

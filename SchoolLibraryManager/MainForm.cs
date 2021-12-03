@@ -55,14 +55,35 @@ namespace SchoolLibraryManager
 
         private void btnStudentForm_Click(object sender, EventArgs e)
         {
-            StudentListForm studentListForm = new StudentListForm();
-            studentListForm.ShowDialog();
+            if (LoginFlag.flagUserBool == false)
+            {
+                MessageBox.Show("로그인이 필요합니다", "권한 필요", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else if (LoginFlag.flagUserBool == true)
+            {
+                StudentListForm studentListForm = new StudentListForm();
+                studentListForm.ShowDialog();
+            }
+            
         }
 
         private void btnBookForm_Click(object sender, EventArgs e)
         {
-            BookListForm bookListForm = new BookListForm();
-            bookListForm.ShowDialog();
+
+            if (LoginFlag.flagUserBool == false)
+            {
+                MessageBox.Show("로그인이 필요합니다", "권한 필요", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else if (LoginFlag.flagUserBool == true)
+            {
+                BookListForm bookListForm = new BookListForm();
+                if (bookListForm.ShowDialog() == DialogResult.OK)
+                {
+                    StudentListForm studentListForm = new StudentListForm();
+                    studentListForm.ShowDialog();
+                }
+            }
+            
         }
     }
 }
