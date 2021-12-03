@@ -529,5 +529,235 @@ namespace SchoolLibraryManager
 
             return i;
         }
+
+        public DataSet loanCount(String stu_id)
+        {
+            DataSet ds = new DataSet();
+            OracleConnection conn = new OracleConnection(con_str);
+            Int64.TryParse(stu_id, out Int64 parId);
+            conn.Open();
+            OracleDataAdapter adapter = new OracleDataAdapter($"SELECT COUNT(*) loancount FROM loan WHERE stu_id = {parId}", conn);
+            adapter.Fill(ds);
+            conn.Dispose();
+            conn.Close();
+
+            return ds;
+        }
+        public DataSet overCount(String stu_id)
+        {
+            DataSet ds = new DataSet();
+            OracleConnection conn = new OracleConnection(con_str);
+            Int64.TryParse(stu_id, out Int64 parId);
+            conn.Open();
+            OracleDataAdapter adapter = new OracleDataAdapter($"SELECT COUNT(*) overcount FROM overdue WHERE stu_id = {parId}", conn);
+            adapter.Fill(ds);
+            conn.Dispose();
+            conn.Close();
+
+            return ds;
+        }
+
+        public ArrayList studentLibraryList(String stu_id)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            Int64.TryParse(stu_id, out Int64 parId);
+            conn.Open();
+
+            OracleCommand cmd = new OracleCommand($"SELECT l.loan_no no,l.book_isbn isbn,b.book_name name, l.loan_ldate ldate, l.loan_rdate rdate FROM loan l,book b WHERE l.book_isbn = b.book_isbn AND l.stu_id = {parId}", conn);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ListViewItem lvt = new ListViewItem();
+            ArrayList lvtList = new ArrayList();
+            while (rdr.Read())
+            {
+                var strArray = new string[] {
+                    rdr.GetInt64(0) +"",
+                    rdr.GetInt64(1) +"",
+                    rdr["name"] as string,
+                    rdr.GetDateTime(3).ToString("yyyy/MM/dd"),
+                    rdr.GetDateTime(4).ToString("yyyy/MM/dd"),
+                };
+
+                lvt = new ListViewItem(strArray);
+
+                lvtList.Add(lvt);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvtList;
+        }
+        public ArrayList BookListSubB()
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            OracleCommand cmd = new OracleCommand($"SELECT * FROM book WHERE book_isbn NOT IN (SELECT book_isbn FROM loan)", conn);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ListViewItem lvt = new ListViewItem();
+            ArrayList lvtList = new ArrayList();
+            while (rdr.Read())
+            {
+                var strArray = new string[] {
+                    rdr.GetInt64(0) +"",
+                    rdr["BOOK_NAME"] as string,
+                    rdr["BOOK_WRITER"] as string,
+                    rdr["BOOK_PUBLISHER"] as string,
+                    rdr.GetInt32(4) +"",
+                    rdr.GetInt32(5) +"",
+                    rdr.GetInt32(6) +"",
+                    rdr["CATEGORY_NO"] as string,
+                };
+
+                lvt = new ListViewItem(strArray);
+
+                lvtList.Add(lvt);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvtList;
+        }
+        public ListViewItem SearchIsbnStu(String isbn)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            Int64.TryParse(isbn, out Int64 parseisbn);
+            OracleCommand cmd = new OracleCommand($"SELECT * FROM book WHERE book_isbn = {parseisbn}", conn);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ListViewItem lvt = new ListViewItem();
+            while (rdr.Read())
+            {
+                var strArray = new string[] {
+                    rdr.GetInt64(0) +"",
+                    rdr["BOOK_NAME"] as string,
+                    rdr["BOOK_WRITER"] as string,
+                    rdr["BOOK_PUBLISHER"] as string,
+                    rdr.GetInt32(4) +"",
+                    rdr.GetInt32(5) +"",
+                    rdr.GetInt32(6) +"",
+                    rdr["CATEGORY_NO"] as string,
+                };
+                lvt = new ListViewItem(strArray);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvt;
+        }
+        public ListViewItem SearchIsbnAll(String isbn)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            Int64.TryParse(isbn, out Int64 parseisbn);
+            OracleCommand cmd = new OracleCommand($"SELECT book_isbn isbn,book_name name FROM book WHERE book_isbn = {parseisbn}", conn);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ListViewItem lvt = new ListViewItem();
+            while (rdr.Read())
+            {
+                var strArray = new string[] {
+                    "+",
+                    rdr.GetInt64(0) +"",
+                    rdr["name"] as string,
+                    "+",
+                    "+",
+                };
+
+                lvt = new ListViewItem(strArray);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvt;
+        }
+        public ListViewItem cancleReturn(String isbn)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            Int64.TryParse(isbn, out Int64 parId);
+            conn.Open();
+
+            OracleCommand cmd = new OracleCommand($"SELECT l.loan_no no,l.book_isbn isbn,b.book_name name, l.loan_ldate ldate, l.loan_rdate rdate FROM loan l,book b WHERE l.book_isbn = b.book_isbn AND b.book_isbn = {parId}", conn);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ListViewItem lvt = new ListViewItem();
+            while (rdr.Read())
+            {
+                var strArray = new string[] {
+                    rdr.GetInt64(0) +"",
+                    rdr.GetInt64(1) +"",
+                    rdr["name"] as string,
+                    rdr.GetDateTime(3).ToString("yyyy/MM/dd"),
+                    rdr.GetDateTime(4).ToString("yyyy/MM/dd"),
+                };
+
+                lvt = new ListViewItem(strArray);
+
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvt;
+        }
+
+        public void libraryService(ArrayList borrowList, ArrayList returnList, String stu_id)
+        {
+
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            Int64.TryParse(stu_id, out Int64 parseid);
+
+            foreach (String m in borrowList)
+            {
+                Int64.TryParse(m, out Int64 parsem);
+                OracleCommand cmd = new OracleCommand($"insert into loan values(Loan_no_seq.nextval,{parsem},sysdate,sysdate+7,{parseid})",conn);
+                cmd.ExecuteNonQuery();
+            }
+            foreach (String m in returnList)
+            {
+                Int64.TryParse(m, out Int64 parsem);
+                OracleCommand cmd = new OracleCommand($"DELETE FROM loan WHERE book_isbn = {parsem} AND stu_id = {parseid}", conn);
+                cmd.ExecuteNonQuery();
+            }
+            conn.Dispose();
+            conn.Close();
+
+        }
+        public int checkBook(String book_isbn)
+        {
+            //MessageBox.Show($"{book_isbn}", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            int i=0;
+            Int64.TryParse(book_isbn, out Int64 book__);
+            Int64.TryParse(book_isbn.Trim(), out Int64 parseisbn);
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            OracleDataAdapter adapter = new OracleDataAdapter($"SELECT COUNT(*) FROM loan WHERE book_isbn = {book__}",conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+
+            DataTable majorDT = ds.Tables[0];
+            foreach (DataRow row in majorDT.Rows)
+            {
+                if (row["COUNT(*)"]+""!="0")
+                {
+                    i = 1;
+                }
+                
+            }
+
+
+            conn.Dispose();
+            conn.Close();
+            return i;
+        }
+        public ArrayList loanTOstu(String book_isbn)
+        {
+            OracleConnection conn = new OracleConnection(con_str);
+            conn.Open();
+            Int64.TryParse(book_isbn, out Int64 parseisbn);
+            OracleCommand cmd = new OracleCommand($"SELECT stu_id,stu_name FROM student WHERE stu_id = (SELECT stu_id FROM loan WHERE book_isbn ={parseisbn})", conn);       
+            OracleDataReader rdr = cmd.ExecuteReader();
+            ArrayList lvtList = new ArrayList();
+            while (rdr.Read())
+            {
+                lvtList.Add(rdr.GetInt64(0) +"");
+                lvtList.Add(rdr["stu_name"] as string);
+            }
+            conn.Dispose();
+            conn.Close();
+            return lvtList;
+        }
+
     }
 }

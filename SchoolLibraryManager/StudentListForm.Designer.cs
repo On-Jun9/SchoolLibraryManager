@@ -293,7 +293,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentListForm";
-            this.Text = "StudentListForm";
+            this.Text = "학생관리";
             this.Load += new System.EventHandler(this.StudentListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
