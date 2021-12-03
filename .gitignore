@@ -363,4 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 
-MyDB.cs
+DBInfo.cs
