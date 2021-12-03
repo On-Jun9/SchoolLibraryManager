@@ -47,20 +47,14 @@ namespace SchoolLibraryManager
             this.lblOverdueBook = new System.Windows.Forms.Label();
             this.lblBorrowBook = new System.Windows.Forms.Label();
             this.lblAllBook = new System.Windows.Forms.Label();
-            this.btnSearchStudent = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSearchStuBookForm = new System.Windows.Forms.TextBox();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.btnBookReload = new System.Windows.Forms.Button();
-            this.cmsBookMenu2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsrDele2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsBookMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsrBookInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrBook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrModi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrDele = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            this.cmsBookMenu2.SuspendLayout();
             this.cmsBookMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,10 +67,11 @@ namespace SchoolLibraryManager
             this.btnAddBook.TabIndex = 11;
             this.btnAddBook.Text = "도서 추가";
             this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
             // btnSearchBook
             // 
-            this.btnSearchBook.Location = new System.Drawing.Point(115, 301);
+            this.btnSearchBook.Location = new System.Drawing.Point(114, 220);
             this.btnSearchBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchBook.Name = "btnSearchBook";
             this.btnSearchBook.Size = new System.Drawing.Size(80, 30);
@@ -88,7 +83,7 @@ namespace SchoolLibraryManager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 257);
+            this.label1.Location = new System.Drawing.Point(24, 176);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 15);
@@ -97,7 +92,7 @@ namespace SchoolLibraryManager
             // 
             // txtSearchBookForm
             // 
-            this.txtSearchBookForm.Location = new System.Drawing.Point(28, 274);
+            this.txtSearchBookForm.Location = new System.Drawing.Point(27, 193);
             this.txtSearchBookForm.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchBookForm.Name = "txtSearchBookForm";
             this.txtSearchBookForm.Size = new System.Drawing.Size(166, 23);
@@ -208,34 +203,6 @@ namespace SchoolLibraryManager
             this.lblAllBook.TabIndex = 5;
             this.lblAllBook.Text = "전체 도서 수 : ";
             // 
-            // btnSearchStudent
-            // 
-            this.btnSearchStudent.Location = new System.Drawing.Point(116, 218);
-            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchStudent.Name = "btnSearchStudent";
-            this.btnSearchStudent.Size = new System.Drawing.Size(80, 30);
-            this.btnSearchStudent.TabIndex = 14;
-            this.btnSearchStudent.Text = "검색";
-            this.btnSearchStudent.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 174);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "학번/이름";
-            // 
-            // txtSearchStuBookForm
-            // 
-            this.txtSearchStuBookForm.Location = new System.Drawing.Point(28, 191);
-            this.txtSearchStuBookForm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchStuBookForm.Name = "txtSearchStuBookForm";
-            this.txtSearchStuBookForm.Size = new System.Drawing.Size(168, 23);
-            this.txtSearchStuBookForm.TabIndex = 12;
-            // 
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
@@ -255,19 +222,6 @@ namespace SchoolLibraryManager
             this.btnBookReload.UseVisualStyleBackColor = true;
             this.btnBookReload.Click += new System.EventHandler(this.btnBookReload_Click);
             // 
-            // cmsBookMenu2
-            // 
-            this.cmsBookMenu2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsrDele2});
-            this.cmsBookMenu2.Name = "cmsStudentMenu2";
-            this.cmsBookMenu2.Size = new System.Drawing.Size(99, 26);
-            // 
-            // tsrDele2
-            // 
-            this.tsrDele2.Name = "tsrDele2";
-            this.tsrDele2.Size = new System.Drawing.Size(98, 22);
-            this.tsrDele2.Text = "삭제";
-            // 
             // cmsBookMenu
             // 
             this.cmsBookMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -276,31 +230,34 @@ namespace SchoolLibraryManager
             this.tsrModi,
             this.tsrDele});
             this.cmsBookMenu.Name = "cmsStudentMenu";
-            this.cmsBookMenu.Size = new System.Drawing.Size(123, 92);
+            this.cmsBookMenu.Size = new System.Drawing.Size(136, 92);
             // 
             // tsrBookInfo
             // 
             this.tsrBookInfo.Name = "tsrBookInfo";
-            this.tsrBookInfo.Size = new System.Drawing.Size(122, 22);
-            this.tsrBookInfo.Text = "대여정보";
+            this.tsrBookInfo.Size = new System.Drawing.Size(135, 22);
+            this.tsrBookInfo.Text = "대여 / 반납";
+            this.tsrBookInfo.Click += new System.EventHandler(this.tsrBookInfo_Click);
             // 
             // tsrBook
             // 
             this.tsrBook.Name = "tsrBook";
-            this.tsrBook.Size = new System.Drawing.Size(122, 22);
+            this.tsrBook.Size = new System.Drawing.Size(135, 22);
             this.tsrBook.Text = "도서메뉴";
             // 
             // tsrModi
             // 
             this.tsrModi.Name = "tsrModi";
-            this.tsrModi.Size = new System.Drawing.Size(122, 22);
+            this.tsrModi.Size = new System.Drawing.Size(135, 22);
             this.tsrModi.Text = "수정";
+            this.tsrModi.Click += new System.EventHandler(this.tsrModi_Click);
             // 
             // tsrDele
             // 
             this.tsrDele.Name = "tsrDele";
-            this.tsrDele.Size = new System.Drawing.Size(122, 22);
+            this.tsrDele.Size = new System.Drawing.Size(135, 22);
             this.tsrDele.Text = "삭제";
+            this.tsrDele.Click += new System.EventHandler(this.tsrDele_Click);
             // 
             // BookListForm
             // 
@@ -309,9 +266,6 @@ namespace SchoolLibraryManager
             this.ClientSize = new System.Drawing.Size(799, 467);
             this.Controls.Add(this.btnBookReload);
             this.Controls.Add(this.lblSearchLabel);
-            this.Controls.Add(this.btnSearchStudent);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtSearchStuBookForm);
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.btnSearchBook);
             this.Controls.Add(this.label1);
@@ -324,7 +278,6 @@ namespace SchoolLibraryManager
             this.Load += new System.EventHandler(this.BookListForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.cmsBookMenu2.ResumeLayout(false);
             this.cmsBookMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,9 +295,6 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.Label lblOverdueBook;
         private System.Windows.Forms.Label lblBorrowBook;
         private System.Windows.Forms.Label lblAllBook;
-        private System.Windows.Forms.Button btnSearchStudent;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSearchStuBookForm;
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.ColumnHeader chBookIsbn;
         private System.Windows.Forms.ColumnHeader chBookName;
@@ -355,8 +305,6 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ColumnHeader chBookCount;
         private System.Windows.Forms.ColumnHeader chBookCate;
         private System.Windows.Forms.Button btnBookReload;
-        private System.Windows.Forms.ContextMenuStrip cmsBookMenu2;
-        private System.Windows.Forms.ToolStripMenuItem tsrDele2;
         private System.Windows.Forms.ContextMenuStrip cmsBookMenu;
         private System.Windows.Forms.ToolStripMenuItem tsrBook;
         private System.Windows.Forms.ToolStripMenuItem tsrModi;
