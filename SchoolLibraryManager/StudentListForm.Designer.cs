@@ -141,6 +141,7 @@ namespace SchoolLibraryManager
             this.lvwStudentList.HideSelection = false;
             this.lvwStudentList.Location = new System.Drawing.Point(229, 38);
             this.lvwStudentList.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwStudentList.MultiSelect = false;
             this.lvwStudentList.Name = "lvwStudentList";
             this.lvwStudentList.Size = new System.Drawing.Size(555, 380);
             this.lvwStudentList.TabIndex = 1;
@@ -194,26 +195,26 @@ namespace SchoolLibraryManager
             this.tsrModi,
             this.tsrDele});
             this.cmsStudentMenu.Name = "cmsStudentMenu";
-            this.cmsStudentMenu.Size = new System.Drawing.Size(181, 92);
+            this.cmsStudentMenu.Size = new System.Drawing.Size(128, 70);
             // 
             // tsrBook
             // 
             this.tsrBook.Name = "tsrBook";
-            this.tsrBook.Size = new System.Drawing.Size(180, 22);
+            this.tsrBook.Size = new System.Drawing.Size(127, 22);
             this.tsrBook.Text = "대여/반납";
             this.tsrBook.Click += new System.EventHandler(this.tsrBook_Click);
             // 
             // tsrModi
             // 
             this.tsrModi.Name = "tsrModi";
-            this.tsrModi.Size = new System.Drawing.Size(180, 22);
+            this.tsrModi.Size = new System.Drawing.Size(127, 22);
             this.tsrModi.Text = "수정";
             this.tsrModi.Click += new System.EventHandler(this.tsrModi_Click);
             // 
             // tsrDele
             // 
             this.tsrDele.Name = "tsrDele";
-            this.tsrDele.Size = new System.Drawing.Size(180, 22);
+            this.tsrDele.Size = new System.Drawing.Size(127, 22);
             this.tsrDele.Text = "삭제";
             this.tsrDele.Click += new System.EventHandler(this.tsrDele_Click);
             // 

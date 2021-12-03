@@ -125,25 +125,28 @@ namespace SchoolLibraryManager
 
         private void tsrDele_Click(object sender, EventArgs e)
         {
-            MyDB myDB = new MyDB();
-            myDB.deleteStuService(selectId, selectName);
-            DialogResult deleteResult = MessageBox.Show($"선택한 학생이 삭제됩니다", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (deleteResult == DialogResult.OK)
+            if (this.lvwStudentList.SelectedItems.Count == 1)
             {
-                int deleteSuccess = myDB.deleteStuService(selectId, selectName);
-                if(deleteSuccess == 0)
+                MyDB myDB = new MyDB();
+                myDB.deleteStuService(selectId, selectName);
+                DialogResult deleteResult = MessageBox.Show($"선택한 학생이 삭제됩니다", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (deleteResult == DialogResult.OK)
                 {
-                    MessageBox.Show("삭제 되었습니다.", "삭제완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    StudentListForm_Load(null, EventArgs.Empty);
+                    int deleteSuccess = myDB.deleteStuService(selectId, selectName);
+                    if (deleteSuccess == 0)
+                    {
+                        MessageBox.Show("삭제 되었습니다.", "삭제완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        StudentListForm_Load(null, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{deleteSuccess}삭제 실패 하였습니다.", "삭제실패", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show($"{deleteSuccess}삭제 실패 하였습니다.", "삭제실패", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
 
-            else if (deleteResult == DialogResult.Cancel)
-            {
+                else if (deleteResult == DialogResult.Cancel)
+                {
+                }
             }
 
         }

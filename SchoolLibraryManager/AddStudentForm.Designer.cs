@@ -219,6 +219,7 @@ namespace SchoolLibraryManager
             // 
             // cboGender
             // 
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGender.FormattingEnabled = true;
             this.cboGender.Items.AddRange(new object[] {
             "남",
@@ -230,6 +231,7 @@ namespace SchoolLibraryManager
             // 
             // cboMajor
             // 
+            this.cboMajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMajor.FormattingEnabled = true;
             this.cboMajor.Location = new System.Drawing.Point(85, 258);
             this.cboMajor.Name = "cboMajor";
@@ -238,6 +240,7 @@ namespace SchoolLibraryManager
             // 
             // cboRegi
             // 
+            this.cboRegi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRegi.FormattingEnabled = true;
             this.cboRegi.Location = new System.Drawing.Point(85, 287);
             this.cboRegi.Name = "cboRegi";
