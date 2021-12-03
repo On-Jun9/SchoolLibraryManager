@@ -27,6 +27,7 @@ namespace SchoolLibraryManager
             {
                 //로그인 에러
                 MessageBox.Show($"아이디 또는 비밀번호를 확인해 주세요", "로그인 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtUserId.Focus();
             }
             else
             {

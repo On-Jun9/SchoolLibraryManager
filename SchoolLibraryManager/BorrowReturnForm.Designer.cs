@@ -30,53 +30,67 @@ namespace SchoolLibraryManager
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOverCount = new System.Windows.Forms.Label();
+            this.lblBorrowCount = new System.Windows.Forms.Label();
             this.lblStudentID = new System.Windows.Forms.Label();
             this.lblStudentName = new System.Windows.Forms.Label();
-            this.lvwBRBookList = new System.Windows.Forms.ListView();
             this.btnBookSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lvwBRStuList = new System.Windows.Forms.ListView();
+            this.chbookno = new System.Windows.Forms.ColumnHeader();
+            this.chBookIsbn = new System.Windows.Forms.ColumnHeader();
+            this.chBookName = new System.Windows.Forms.ColumnHeader();
+            this.chBookldate = new System.Windows.Forms.ColumnHeader();
+            this.chBookrdate = new System.Windows.Forms.ColumnHeader();
             this.btnBookCancle = new System.Windows.Forms.Button();
+            this.lvwBRBookList = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.chBookWriter = new System.Windows.Forms.ColumnHeader();
+            this.chBookPub = new System.Windows.Forms.ColumnHeader();
+            this.chBookYear = new System.Windows.Forms.ColumnHeader();
+            this.chBookPage = new System.Windows.Forms.ColumnHeader();
+            this.chBookCount = new System.Windows.Forms.ColumnHeader();
+            this.chBookCate = new System.Windows.Forms.ColumnHeader();
+            this.btnReload = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblOverCount);
+            this.groupBox1.Controls.Add(this.lblBorrowCount);
             this.groupBox1.Controls.Add(this.lblStudentID);
             this.groupBox1.Controls.Add(this.lblStudentName);
             this.groupBox1.Location = new System.Drawing.Point(8, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(384, 154);
+            this.groupBox1.Size = new System.Drawing.Size(550, 87);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생 정보";
             // 
-            // label2
+            // lblOverCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "연체중 :";
+            this.lblOverCount.AutoSize = true;
+            this.lblOverCount.Location = new System.Drawing.Point(266, 58);
+            this.lblOverCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOverCount.Name = "lblOverCount";
+            this.lblOverCount.Size = new System.Drawing.Size(50, 15);
+            this.lblOverCount.TabIndex = 11;
+            this.lblOverCount.Text = "연체중 :";
             // 
-            // label1
+            // lblBorrowCount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 84);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "대여중 :";
+            this.lblBorrowCount.AutoSize = true;
+            this.lblBorrowCount.Location = new System.Drawing.Point(266, 32);
+            this.lblBorrowCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBorrowCount.Name = "lblBorrowCount";
+            this.lblBorrowCount.Size = new System.Drawing.Size(54, 15);
+            this.lblBorrowCount.TabIndex = 10;
+            this.lblBorrowCount.Text = "대여중 : ";
             // 
             // lblStudentID
             // 
@@ -98,39 +112,30 @@ namespace SchoolLibraryManager
             this.lblStudentName.TabIndex = 8;
             this.lblStudentName.Text = "학생 이름";
             // 
-            // lvwBRBookList
-            // 
-            this.lvwBRBookList.HideSelection = false;
-            this.lvwBRBookList.Location = new System.Drawing.Point(8, 206);
-            this.lvwBRBookList.Margin = new System.Windows.Forms.Padding(2);
-            this.lvwBRBookList.Name = "lvwBRBookList";
-            this.lvwBRBookList.Size = new System.Drawing.Size(187, 215);
-            this.lvwBRBookList.TabIndex = 1;
-            this.lvwBRBookList.UseCompatibleStateImageBehavior = false;
-            // 
             // btnBookSave
             // 
-            this.btnBookSave.Location = new System.Drawing.Point(299, 433);
+            this.btnBookSave.Location = new System.Drawing.Point(465, 602);
             this.btnBookSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookSave.Name = "btnBookSave";
             this.btnBookSave.Size = new System.Drawing.Size(93, 30);
             this.btnBookSave.TabIndex = 3;
             this.btnBookSave.Text = "저장";
             this.btnBookSave.UseVisualStyleBackColor = true;
+            this.btnBookSave.Click += new System.EventHandler(this.btnBookSave_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 176);
+            this.label3.Location = new System.Drawing.Point(12, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 7;
-            this.label3.Text = "전체 리스트";
+            this.label3.Text = "보유 도서";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(205, 176);
+            this.label4.Location = new System.Drawing.Point(12, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 15);
             this.label4.TabIndex = 8;
@@ -138,17 +143,53 @@ namespace SchoolLibraryManager
             // 
             // lvwBRStuList
             // 
+            this.lvwBRStuList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chbookno,
+            this.chBookIsbn,
+            this.chBookName,
+            this.chBookldate,
+            this.chBookrdate});
+            this.lvwBRStuList.FullRowSelect = true;
+            this.lvwBRStuList.GridLines = true;
             this.lvwBRStuList.HideSelection = false;
-            this.lvwBRStuList.Location = new System.Drawing.Point(205, 206);
+            this.lvwBRStuList.Location = new System.Drawing.Point(12, 372);
             this.lvwBRStuList.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwBRStuList.MultiSelect = false;
             this.lvwBRStuList.Name = "lvwBRStuList";
-            this.lvwBRStuList.Size = new System.Drawing.Size(187, 215);
+            this.lvwBRStuList.Size = new System.Drawing.Size(546, 220);
             this.lvwBRStuList.TabIndex = 9;
             this.lvwBRStuList.UseCompatibleStateImageBehavior = false;
+            this.lvwBRStuList.View = System.Windows.Forms.View.Details;
+            this.lvwBRStuList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwBRStuList_MouseDoubleClick);
+            // 
+            // chbookno
+            // 
+            this.chbookno.Text = "no";
+            this.chbookno.Width = 40;
+            // 
+            // chBookIsbn
+            // 
+            this.chBookIsbn.Text = "ISBN";
+            this.chBookIsbn.Width = 140;
+            // 
+            // chBookName
+            // 
+            this.chBookName.Text = "도서명";
+            this.chBookName.Width = 180;
+            // 
+            // chBookldate
+            // 
+            this.chBookldate.Text = "대여일";
+            this.chBookldate.Width = 90;
+            // 
+            // chBookrdate
+            // 
+            this.chBookrdate.Text = "반납기한";
+            this.chBookrdate.Width = 90;
             // 
             // btnBookCancle
             // 
-            this.btnBookCancle.Location = new System.Drawing.Point(202, 433);
+            this.btnBookCancle.Location = new System.Drawing.Point(368, 602);
             this.btnBookCancle.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookCancle.Name = "btnBookCancle";
             this.btnBookCancle.Size = new System.Drawing.Size(93, 30);
@@ -157,17 +198,90 @@ namespace SchoolLibraryManager
             this.btnBookCancle.UseVisualStyleBackColor = true;
             this.btnBookCancle.Click += new System.EventHandler(this.btnBookCancle_Click);
             // 
+            // lvwBRBookList
+            // 
+            this.lvwBRBookList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.chBookWriter,
+            this.chBookPub,
+            this.chBookYear,
+            this.chBookPage,
+            this.chBookCount,
+            this.chBookCate});
+            this.lvwBRBookList.FullRowSelect = true;
+            this.lvwBRBookList.GridLines = true;
+            this.lvwBRBookList.HideSelection = false;
+            this.lvwBRBookList.Location = new System.Drawing.Point(12, 122);
+            this.lvwBRBookList.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwBRBookList.MultiSelect = false;
+            this.lvwBRBookList.Name = "lvwBRBookList";
+            this.lvwBRBookList.Size = new System.Drawing.Size(546, 220);
+            this.lvwBRBookList.TabIndex = 11;
+            this.lvwBRBookList.UseCompatibleStateImageBehavior = false;
+            this.lvwBRBookList.View = System.Windows.Forms.View.Details;
+            this.lvwBRBookList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwBRBookList_MouseDoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ISBN";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "도서명";
+            this.columnHeader2.Width = 100;
+            // 
+            // chBookWriter
+            // 
+            this.chBookWriter.Text = "저자";
+            this.chBookWriter.Width = 70;
+            // 
+            // chBookPub
+            // 
+            this.chBookPub.Text = "출판사";
+            // 
+            // chBookYear
+            // 
+            this.chBookYear.Text = "출판년도";
+            // 
+            // chBookPage
+            // 
+            this.chBookPage.Text = "페이지";
+            this.chBookPage.Width = 50;
+            // 
+            // chBookCount
+            // 
+            this.chBookCount.Text = "보유";
+            this.chBookCount.Width = 40;
+            // 
+            // chBookCate
+            // 
+            this.chBookCate.Text = "분류번호";
+            // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(12, 602);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(93, 30);
+            this.btnReload.TabIndex = 12;
+            this.btnReload.Text = "초기화";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // BorrowReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 487);
+            this.ClientSize = new System.Drawing.Size(578, 643);
+            this.Controls.Add(this.btnReload);
+            this.Controls.Add(this.lvwBRBookList);
             this.Controls.Add(this.btnBookCancle);
             this.Controls.Add(this.lvwBRStuList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBookSave);
-            this.Controls.Add(this.lvwBRBookList);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowReturnForm";
@@ -183,15 +297,33 @@ namespace SchoolLibraryManager
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lvwBRBookList;
         private System.Windows.Forms.Button btnBookSave;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView lvwBRStuList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOverCount;
+        private System.Windows.Forms.Label lblBorrowCount;
         private System.Windows.Forms.Button btnBookCancle;
+        private System.Windows.Forms.ColumnHeader chBookIsbn;
+        private System.Windows.Forms.ColumnHeader chBookName;
+        private System.Windows.Forms.ColumnHeader chbookno;
+        private System.Windows.Forms.ColumnHeader chBookldate;
+        private System.Windows.Forms.ColumnHeader chBookrdate;
+        private System.Windows.Forms.ListView lvwBRBookList;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader chBookWriter;
+        private System.Windows.Forms.ColumnHeader chBookPub;
+        private System.Windows.Forms.ColumnHeader chBookYear;
+        private System.Windows.Forms.ColumnHeader chBookPage;
+        private System.Windows.Forms.ColumnHeader chBookCount;
+        private System.Windows.Forms.ColumnHeader chBookCate;
+        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Label testestest;
     }
 }

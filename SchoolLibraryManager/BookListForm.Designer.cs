@@ -115,6 +115,7 @@ namespace SchoolLibraryManager
             this.lvwBook.HideSelection = false;
             this.lvwBook.Location = new System.Drawing.Point(230, 38);
             this.lvwBook.Margin = new System.Windows.Forms.Padding(2);
+            this.lvwBook.MultiSelect = false;
             this.lvwBook.Name = "lvwBook";
             this.lvwBook.Size = new System.Drawing.Size(555, 380);
             this.lvwBook.TabIndex = 7;

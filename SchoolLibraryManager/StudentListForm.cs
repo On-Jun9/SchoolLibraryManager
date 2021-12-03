@@ -111,7 +111,10 @@ namespace SchoolLibraryManager
         private void tsrBook_Click(object sender, EventArgs e)
         {
             BorrowReturnForm borrowReturnForm = new BorrowReturnForm(selectId, selectName);
-            borrowReturnForm.ShowDialog();
+            if (borrowReturnForm.ShowDialog() == DialogResult.OK)
+            {
+                StudentListForm_Load(null, EventArgs.Empty);
+            }
         }
 
         private void tsrModi_Click(object sender, EventArgs e)
