@@ -39,6 +39,7 @@ namespace SchoolLibraryManager
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lvwBRStuList = new System.Windows.Forms.ListView();
+            this.btnBookCancle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,10 +110,10 @@ namespace SchoolLibraryManager
             // 
             // btnBookSave
             // 
-            this.btnBookSave.Location = new System.Drawing.Point(276, 433);
+            this.btnBookSave.Location = new System.Drawing.Point(299, 433);
             this.btnBookSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookSave.Name = "btnBookSave";
-            this.btnBookSave.Size = new System.Drawing.Size(116, 30);
+            this.btnBookSave.Size = new System.Drawing.Size(93, 30);
             this.btnBookSave.TabIndex = 3;
             this.btnBookSave.Text = "저장";
             this.btnBookSave.UseVisualStyleBackColor = true;
@@ -145,11 +146,23 @@ namespace SchoolLibraryManager
             this.lvwBRStuList.TabIndex = 9;
             this.lvwBRStuList.UseCompatibleStateImageBehavior = false;
             // 
+            // btnBookCancle
+            // 
+            this.btnBookCancle.Location = new System.Drawing.Point(202, 433);
+            this.btnBookCancle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBookCancle.Name = "btnBookCancle";
+            this.btnBookCancle.Size = new System.Drawing.Size(93, 30);
+            this.btnBookCancle.TabIndex = 10;
+            this.btnBookCancle.Text = "취소";
+            this.btnBookCancle.UseVisualStyleBackColor = true;
+            this.btnBookCancle.Click += new System.EventHandler(this.btnBookCancle_Click);
+            // 
             // BorrowReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 487);
+            this.Controls.Add(this.btnBookCancle);
             this.Controls.Add(this.lvwBRStuList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -159,6 +172,7 @@ namespace SchoolLibraryManager
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowReturnForm";
             this.Text = "BorrowReturnForm";
+            this.Load += new System.EventHandler(this.BorrowReturnForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -178,5 +192,6 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ListView lvwBRStuList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBookCancle;
     }
 }
