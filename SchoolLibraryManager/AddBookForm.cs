@@ -73,55 +73,63 @@ namespace SchoolLibraryManager
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MyDB myDB = new MyDB();
-            ArrayList formData = new ArrayList();
-            formData.Add(this.txtBookIsbn.Text);//0
-            formData.Add(this.txtBookName.Text);//1
-            formData.Add(this.txtBookWriter.Text);//2
-            formData.Add(this.txtBookPub.Text);//3
-            formData.Add(this.txtBookPubYear.Text);//4
-            formData.Add(this.txtBookPage.Text);//5
-            formData.Add(this.txtBookCount.Text);//6
-            formData.Add(this.cboBookCate.SelectedItem + "");//7
-
-            if (this.txtBookIsbn.Text.Trim() == "" || this.txtBookName.Text.Trim() == "")
+            try
             {
-                MessageBox.Show($"ISBN, 도서명 은 필수 값 입니다.", "저장 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (this.txtBookIsbn.Text.Trim() == "")
-                    this.txtBookIsbn.Focus();
-                else if (this.txtBookName.Text.Trim() == "")
-                    this.txtBookName.Focus();
-            }
-            else if (flag == "modify")//수정시
-            {
-                int modifyVal = myDB.ModifyBookService(formData);
-                if (modifyVal == 0)
-                {
-                    MessageBox.Show($"수정 실패!", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show($"수정 완료!", "수정", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    this.Close();
+                MyDB myDB = new MyDB();
+                ArrayList formData = new ArrayList();
+                formData.Add(this.txtBookIsbn.Text);//0
+                formData.Add(this.txtBookName.Text);//1
+                formData.Add(this.txtBookWriter.Text);//2
+                formData.Add(this.txtBookPub.Text);//3
+                formData.Add(this.txtBookPubYear.Text);//4
+                formData.Add(this.txtBookPage.Text);//5
+                formData.Add(this.txtBookCount.Text);//6
+                formData.Add(this.cboBookCate.SelectedItem + "");//7
 
-                }
-            }
-            else//추가시
-            {
-                int insertVal = myDB.InsertBookService(formData);
-                if (insertVal == 0)
+                if (this.txtBookIsbn.Text.Trim() == "" || this.txtBookName.Text.Trim() == "")
                 {
-                    MessageBox.Show($"추가 실패!", "추가 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"ISBN, 도서명 은 필수 값 입니다.", "저장 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (this.txtBookIsbn.Text.Trim() == "")
+                        this.txtBookIsbn.Focus();
+                    else if (this.txtBookName.Text.Trim() == "")
+                        this.txtBookName.Focus();
                 }
-                else
+                else if (flag == "modify")//수정시
                 {
-                    MessageBox.Show($"추가 완료!", "추가", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    this.Close();
+                    int modifyVal = myDB.ModifyBookService(formData);
+                    if (modifyVal == 0)
+                    {
+                        MessageBox.Show($"수정 실패!", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"수정 완료!", "수정", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        this.Close();
 
+                    }
+                }
+                else//추가시
+                {
+                    int insertVal = myDB.InsertBookService(formData);
+                    if (insertVal == 0)
+                    {
+                        MessageBox.Show($"추가 실패!", "추가 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"추가 완료!", "추가", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+
+                    }
                 }
             }
+            catch
+            {
+                MessageBox.Show($"값을 확인해 주세요", "실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
 

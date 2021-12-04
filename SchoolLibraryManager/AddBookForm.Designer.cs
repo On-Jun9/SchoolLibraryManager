@@ -127,6 +127,7 @@ namespace SchoolLibraryManager
             // 
             this.txtBookPub.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBookPub.Location = new System.Drawing.Point(91, 203);
+            this.txtBookPub.MaxLength = 50;
             this.txtBookPub.Name = "txtBookPub";
             this.txtBookPub.Size = new System.Drawing.Size(261, 22);
             this.txtBookPub.TabIndex = 37;
@@ -146,6 +147,7 @@ namespace SchoolLibraryManager
             // 
             this.txtBookWriter.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBookWriter.Location = new System.Drawing.Point(91, 167);
+            this.txtBookWriter.MaxLength = 100;
             this.txtBookWriter.Name = "txtBookWriter";
             this.txtBookWriter.Size = new System.Drawing.Size(261, 22);
             this.txtBookWriter.TabIndex = 35;
@@ -165,6 +167,7 @@ namespace SchoolLibraryManager
             // 
             this.txtBookName.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBookName.Location = new System.Drawing.Point(91, 131);
+            this.txtBookName.MaxLength = 200;
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.Size = new System.Drawing.Size(261, 22);
             this.txtBookName.TabIndex = 31;

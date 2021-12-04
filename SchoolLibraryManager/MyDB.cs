@@ -100,7 +100,7 @@ namespace SchoolLibraryManager
             while (rdr.Read())
             {
                 var strArray = new string[] {
-                    rdr.GetInt32(0) +"",
+                    rdr.GetInt64(0) +"",
                     rdr["stu_name"] as string,
                     rdr.GetDateTime(2).ToString("yyyy/MM/dd"),
                     rdr["stu_gender"] as string,
@@ -146,7 +146,7 @@ namespace SchoolLibraryManager
             while (rdr.Read())
             {
                 var strArray = new string[] {
-                    rdr.GetInt32(0) +"",
+                    rdr.GetInt64(0) +"",
                     rdr["stu_name"] as string,
                     rdr.GetDateTime(2).ToString("yyyy/MM/dd"),
                     rdr["stu_gender"] as string,
@@ -218,9 +218,9 @@ namespace SchoolLibraryManager
                     rdr["BOOK_NAME"] as string,
                     rdr["BOOK_WRITER"] as string,
                     rdr["BOOK_PUBLISHER"] as string,
-                    rdr.GetInt32(4) +"",
-                    rdr.GetInt32(5) +"",
-                    rdr.GetInt32(6) +"",
+                    rdr.GetInt64(4) +"",
+                    rdr.GetInt64(5) +"",
+                    rdr.GetInt64(6) +"",
                     rdr["CATEGORY_NO"] as string,
                 };
 
@@ -257,9 +257,9 @@ namespace SchoolLibraryManager
                     rdr["BOOK_NAME"] as string,
                     rdr["BOOK_WRITER"] as string,
                     rdr["BOOK_PUBLISHER"] as string,
-                    rdr.GetInt32(4) +"",
-                    rdr.GetInt32(5) +"",
-                    rdr.GetInt32(6) +"",
+                    rdr.GetInt64(4) +"",
+                    rdr.GetInt64(5) +"",
+                    rdr.GetInt64(6) +"",
                     rdr["CATEGORY_NO"] as string,
                 };
 
@@ -600,9 +600,9 @@ namespace SchoolLibraryManager
                     rdr["BOOK_NAME"] as string,
                     rdr["BOOK_WRITER"] as string,
                     rdr["BOOK_PUBLISHER"] as string,
-                    rdr.GetInt32(4) +"",
-                    rdr.GetInt32(5) +"",
-                    rdr.GetInt32(6) +"",
+                    rdr.GetInt64(4) +"",
+                    rdr.GetInt64(5) +"",
+                    rdr.GetInt64(6) +"",
                     rdr["CATEGORY_NO"] as string,
                 };
 
@@ -629,9 +629,9 @@ namespace SchoolLibraryManager
                     rdr["BOOK_NAME"] as string,
                     rdr["BOOK_WRITER"] as string,
                     rdr["BOOK_PUBLISHER"] as string,
-                    rdr.GetInt32(4) +"",
-                    rdr.GetInt32(5) +"",
-                    rdr.GetInt32(6) +"",
+                    rdr.GetInt64(4) +"",
+                    rdr.GetInt64(5) +"",
+                    rdr.GetInt64(6) +"",
                     rdr["CATEGORY_NO"] as string,
                 };
                 lvt = new ListViewItem(strArray);

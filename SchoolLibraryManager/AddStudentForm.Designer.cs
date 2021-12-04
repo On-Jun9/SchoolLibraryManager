@@ -78,6 +78,7 @@ namespace SchoolLibraryManager
             // 
             this.txtStudentName.ForeColor = System.Drawing.Color.Black;
             this.txtStudentName.Location = new System.Drawing.Point(97, 127);
+            this.txtStudentName.MaxLength = 30;
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(282, 22);
             this.txtStudentName.TabIndex = 4;
@@ -113,6 +114,7 @@ namespace SchoolLibraryManager
             // 
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.Location = new System.Drawing.Point(97, 238);
+            this.txtPhone.MaxLength = 13;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(282, 22);
             this.txtPhone.TabIndex = 10;
@@ -130,6 +132,7 @@ namespace SchoolLibraryManager
             // 
             this.txtZip.ForeColor = System.Drawing.Color.Black;
             this.txtZip.Location = new System.Drawing.Point(97, 275);
+            this.txtZip.MaxLength = 250;
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(282, 22);
             this.txtZip.TabIndex = 12;
@@ -156,6 +159,7 @@ namespace SchoolLibraryManager
             // 
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(97, 312);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(282, 22);
             this.txtEmail.TabIndex = 15;
