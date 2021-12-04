@@ -114,7 +114,6 @@ namespace SchoolLibraryManager
             if (this.lvwBook.SelectedItems.Count == 1)
             {
                 MyDB myDB = new MyDB();
-                myDB.deleteStuService(selectIsbn, selectName);
                 DialogResult deleteResult = MessageBox.Show($"선택한 도서가 삭제됩니다", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (deleteResult == DialogResult.OK)
                 {

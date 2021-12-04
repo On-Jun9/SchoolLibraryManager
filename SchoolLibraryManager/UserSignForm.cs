@@ -43,5 +43,13 @@ namespace SchoolLibraryManager
         {
            
         }
+
+        private void txtUserPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, new EventArgs());
+            }
+        }
     }
 }

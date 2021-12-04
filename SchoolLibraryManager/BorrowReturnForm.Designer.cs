@@ -296,6 +296,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowReturnForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "대여 / 반납";
             this.Load += new System.EventHandler(this.BorrowReturnForm_Load);
             this.groupBox1.ResumeLayout(false);

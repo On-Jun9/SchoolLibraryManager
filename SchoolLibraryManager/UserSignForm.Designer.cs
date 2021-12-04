@@ -71,6 +71,8 @@ namespace SchoolLibraryManager
             this.txtUserPwd.Name = "txtUserPwd";
             this.txtUserPwd.Size = new System.Drawing.Size(196, 23);
             this.txtUserPwd.TabIndex = 2;
+            this.txtUserPwd.UseSystemPasswordChar = true;
+            this.txtUserPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserPwd_KeyDown);
             // 
             // btnLogin
             // 
@@ -96,6 +98,7 @@ namespace SchoolLibraryManager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserSignForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "로그인";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserSignForm_FormClosed);

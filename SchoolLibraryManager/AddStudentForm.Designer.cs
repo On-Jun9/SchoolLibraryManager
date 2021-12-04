@@ -68,6 +68,7 @@ namespace SchoolLibraryManager
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(247, 23);
             this.txtStudentId.TabIndex = 2;
+            this.txtStudentId.TextChanged += new System.EventHandler(this.txtStudentId_TextChanged);
             // 
             // txtStudentName
             // 
@@ -275,6 +276,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.txtStudentId);
             this.Controls.Add(this.label1);
             this.Name = "AddStudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddStudentForm";
             this.Load += new System.EventHandler(this.AddStudentForm_Load);
             this.ResumeLayout(false);

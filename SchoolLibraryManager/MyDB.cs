@@ -415,7 +415,7 @@ namespace SchoolLibraryManager
             conn.Open();
             int.TryParse(userId + "", out int parId);
 
-            OracleCommand cmd = new OracleCommand($"DELETE FROM student WHERE stu_id = {parId} AND stu_name = {userName}", conn);
+            OracleCommand cmd = new OracleCommand($"DELETE FROM student WHERE stu_id = {parId} AND stu_name = '{userName}'", conn);
             i = cmd.ExecuteNonQuery();
 
             conn.Dispose();

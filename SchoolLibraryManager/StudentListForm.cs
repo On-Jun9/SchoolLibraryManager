@@ -131,7 +131,6 @@ namespace SchoolLibraryManager
             if (this.lvwStudentList.SelectedItems.Count == 1)
             {
                 MyDB myDB = new MyDB();
-                myDB.deleteStuService(selectId, selectName);
                 DialogResult deleteResult = MessageBox.Show($"선택한 학생이 삭제됩니다", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (deleteResult == DialogResult.OK)
                 {

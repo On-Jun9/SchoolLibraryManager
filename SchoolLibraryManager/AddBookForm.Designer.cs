@@ -102,6 +102,7 @@ namespace SchoolLibraryManager
             this.txtBookPubYear.Name = "txtBookPubYear";
             this.txtBookPubYear.Size = new System.Drawing.Size(247, 23);
             this.txtBookPubYear.TabIndex = 40;
+            this.txtBookPubYear.TextChanged += new System.EventHandler(this.txtBookPubYear_TextChanged);
             // 
             // txtBookPub
             // 
@@ -157,6 +158,7 @@ namespace SchoolLibraryManager
             this.txtBookIsbn.Name = "txtBookIsbn";
             this.txtBookIsbn.Size = new System.Drawing.Size(247, 23);
             this.txtBookIsbn.TabIndex = 29;
+            this.txtBookIsbn.TextChanged += new System.EventHandler(this.txtBookIsbn_TextChanged);
             // 
             // label1
             // 
@@ -182,6 +184,7 @@ namespace SchoolLibraryManager
             this.txtBookPage.Name = "txtBookPage";
             this.txtBookPage.Size = new System.Drawing.Size(247, 23);
             this.txtBookPage.TabIndex = 50;
+            this.txtBookPage.TextChanged += new System.EventHandler(this.txtBookPage_TextChanged);
             // 
             // label12
             // 
@@ -198,6 +201,7 @@ namespace SchoolLibraryManager
             this.txtBookCount.Name = "txtBookCount";
             this.txtBookCount.Size = new System.Drawing.Size(247, 23);
             this.txtBookCount.TabIndex = 52;
+            this.txtBookCount.TextChanged += new System.EventHandler(this.txtBookCount_TextChanged);
             // 
             // AddBookForm
             // 
@@ -223,6 +227,7 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.txtBookIsbn);
             this.Controls.Add(this.label1);
             this.Name = "AddBookForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddBookForm";
             this.Load += new System.EventHandler(this.AddBookForm_Load);
             this.ResumeLayout(false);

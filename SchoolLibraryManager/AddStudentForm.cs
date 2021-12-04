@@ -15,6 +15,7 @@ namespace SchoolLibraryManager
     {
         String _userId, _username;
         String flag;
+        string[] prevText = Enumerable.Repeat("", 10).ToArray();
         public AddStudentForm()
         {
             InitializeComponent();
@@ -153,6 +154,24 @@ namespace SchoolLibraryManager
                     this.Close();
 
                 }
+            }
+        }
+
+        private void txtStudentId_TextChanged(object sender, EventArgs e)
+        {
+            Int64 value = 0;
+            //입력받은 값이 double 형으로 변환활 수 있는 지 확인
+            if (Int64.TryParse(this.txtStudentId.Text, out value) == false)
+            {
+                //변환할 수 없으면 이전 텍스트 값으로 재 설정
+                this.txtStudentId.Text = prevText[0];
+                //커서 위치를 텍스트의 제일 마지막으로 위치시킴
+                this.txtStudentId.Select(this.txtStudentId.Text.Length, 0);
+            }
+            else
+            {
+                //변환할 수 있으면 현재 값을 이전 값으로 저장해 둠.
+                prevText[0] = this.txtStudentId.Text;
             }
         }
 

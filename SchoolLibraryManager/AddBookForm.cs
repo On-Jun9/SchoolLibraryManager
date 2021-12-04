@@ -15,6 +15,7 @@ namespace SchoolLibraryManager
     {
         String _bookisbn, _bookname;
         String flag;
+        string[] prevText = Enumerable.Repeat("", 10).ToArray();
         public AddBookForm()
         {
             InitializeComponent();
@@ -120,6 +121,79 @@ namespace SchoolLibraryManager
                 }
             }
 
+        }
+
+        private void txtBookIsbn_TextChanged(object sender, EventArgs e)
+        {
+            
+            Int64 value = 0;
+            //입력받은 값이 double 형으로 변환활 수 있는 지 확인
+            if (Int64.TryParse(this.txtBookIsbn.Text, out value) == false)
+            {
+                //변환할 수 없으면 이전 텍스트 값으로 재 설정
+                this.txtBookIsbn.Text = prevText[0];
+                //커서 위치를 텍스트의 제일 마지막으로 위치시킴
+                this.txtBookIsbn.Select(this.txtBookIsbn.Text.Length, 0);
+            }
+            else
+            {
+                //변환할 수 있으면 현재 값을 이전 값으로 저장해 둠.
+                prevText[0] = this.txtBookIsbn.Text;
+            }
+        }
+
+        private void txtBookPubYear_TextChanged(object sender, EventArgs e)
+        {
+            Int64 value = 0;
+            //입력받은 값이 double 형으로 변환활 수 있는 지 확인
+            if (Int64.TryParse(this.txtBookPubYear.Text, out value) == false)
+            {
+                //변환할 수 없으면 이전 텍스트 값으로 재 설정
+                this.txtBookPubYear.Text = prevText[1];
+                //커서 위치를 텍스트의 제일 마지막으로 위치시킴
+                this.txtBookPubYear.Select(this.txtBookPubYear.Text.Length, 0);
+            }
+            else
+            {
+                //변환할 수 있으면 현재 값을 이전 값으로 저장해 둠.
+                prevText[1] = this.txtBookPubYear.Text;
+            }
+        }
+
+        private void txtBookPage_TextChanged(object sender, EventArgs e)
+        {
+            Int64 value = 0;
+            //입력받은 값이 double 형으로 변환활 수 있는 지 확인
+            if (Int64.TryParse(this.txtBookPage.Text, out value) == false)
+            {
+                //변환할 수 없으면 이전 텍스트 값으로 재 설정
+                this.txtBookPage.Text = prevText[2];
+                //커서 위치를 텍스트의 제일 마지막으로 위치시킴
+                this.txtBookPage.Select(this.txtBookPage.Text.Length, 0);
+            }
+            else
+            {
+                //변환할 수 있으면 현재 값을 이전 값으로 저장해 둠.
+                prevText[2] = this.txtBookPage.Text;
+            }
+        }
+
+        private void txtBookCount_TextChanged(object sender, EventArgs e)
+        {
+            Int64 value = 0;
+            //입력받은 값이 double 형으로 변환활 수 있는 지 확인
+            if (Int64.TryParse(this.txtBookCount.Text, out value) == false)
+            {
+                //변환할 수 없으면 이전 텍스트 값으로 재 설정
+                this.txtBookCount.Text = prevText[3];
+                //커서 위치를 텍스트의 제일 마지막으로 위치시킴
+                this.txtBookCount.Select(this.txtBookCount.Text.Length, 0);
+            }
+            else
+            {
+                //변환할 수 있으면 현재 값을 이전 값으로 저장해 둠.
+                prevText[3] = this.txtBookCount.Text;
+            }
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
