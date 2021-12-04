@@ -36,9 +36,11 @@ namespace SchoolLibraryManager
             Fillcombobox(myDB);
 
             this.Text = "추가";
+            this.txtTitle.Text = "학생 추가";
             if (flag == "modify")//수정시
             {
                 this.Text = "수정";
+                this.txtTitle.Text = "학생 수정";
                 DataSet myDS = myDB.ModifyStudent(_userId);
                 DataTable myDT = myDS.Tables[0];
                 this.txtStudentId.Text = _userId;

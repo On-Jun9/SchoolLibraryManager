@@ -37,56 +37,77 @@ namespace SchoolLibraryManager
             // 
             // btnStudentForm
             // 
-            this.btnStudentForm.Location = new System.Drawing.Point(149, 95);
+            this.btnStudentForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnStudentForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnStudentForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnStudentForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentForm.Font = new System.Drawing.Font("나눔스퀘어라운드 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStudentForm.Location = new System.Drawing.Point(126, 93);
             this.btnStudentForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudentForm.Name = "btnStudentForm";
-            this.btnStudentForm.Size = new System.Drawing.Size(144, 105);
+            this.btnStudentForm.Size = new System.Drawing.Size(144, 91);
             this.btnStudentForm.TabIndex = 0;
             this.btnStudentForm.Text = "학생 관리";
-            this.btnStudentForm.UseVisualStyleBackColor = true;
+            this.btnStudentForm.UseVisualStyleBackColor = false;
             this.btnStudentForm.Click += new System.EventHandler(this.btnStudentForm_Click);
             // 
             // btnBookForm
             // 
-            this.btnBookForm.Location = new System.Drawing.Point(306, 95);
+            this.btnBookForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBookForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBookForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBookForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookForm.Font = new System.Drawing.Font("나눔스퀘어라운드 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBookForm.Location = new System.Drawing.Point(316, 93);
             this.btnBookForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookForm.Name = "btnBookForm";
-            this.btnBookForm.Size = new System.Drawing.Size(144, 105);
+            this.btnBookForm.Size = new System.Drawing.Size(144, 91);
             this.btnBookForm.TabIndex = 1;
             this.btnBookForm.Text = "도서 관리";
-            this.btnBookForm.UseVisualStyleBackColor = true;
+            this.btnBookForm.UseVisualStyleBackColor = false;
             this.btnBookForm.Click += new System.EventHandler(this.btnBookForm_Click);
             // 
             // btnLoginForm
             // 
-            this.btnLoginForm.Location = new System.Drawing.Point(500, 293);
+            this.btnLoginForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnLoginForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLoginForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginForm.Font = new System.Drawing.Font("나눔스퀘어라운드 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLoginForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnLoginForm.Location = new System.Drawing.Point(427, 231);
             this.btnLoginForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginForm.Name = "btnLoginForm";
-            this.btnLoginForm.Size = new System.Drawing.Size(78, 25);
+            this.btnLoginForm.Size = new System.Drawing.Size(85, 26);
             this.btnLoginForm.TabIndex = 2;
             this.btnLoginForm.Text = "로그인/로그아웃";
-            this.btnLoginForm.UseVisualStyleBackColor = true;
+            this.btnLoginForm.UseVisualStyleBackColor = false;
             this.btnLoginForm.Click += new System.EventHandler(this.btnLoginForm_Click);
             // 
             // lblLoginUser
             // 
             this.lblLoginUser.AutoSize = true;
-            this.lblLoginUser.Location = new System.Drawing.Point(380, 298);
+            this.lblLoginUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.lblLoginUser.Font = new System.Drawing.Font("나눔스퀘어라운드 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLoginUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblLoginUser.Location = new System.Drawing.Point(427, 261);
             this.lblLoginUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoginUser.Name = "lblLoginUser";
-            this.lblLoginUser.Size = new System.Drawing.Size(48, 15);
+            this.lblLoginUser.Size = new System.Drawing.Size(48, 13);
             this.lblLoginUser.TabIndex = 3;
             this.lblLoginUser.Text = "Login : ";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 331);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.ClientSize = new System.Drawing.Size(572, 304);
             this.Controls.Add(this.lblLoginUser);
             this.Controls.Add(this.btnLoginForm);
             this.Controls.Add(this.btnBookForm);
             this.Controls.Add(this.btnStudentForm);
+            this.Font = new System.Drawing.Font("나눔스퀘어라운드 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";

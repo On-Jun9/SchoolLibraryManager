@@ -146,6 +146,21 @@ namespace SchoolLibraryManager
 
         }
 
+        private void txtTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSearchLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvwStudentList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtSearchStuStuForm_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

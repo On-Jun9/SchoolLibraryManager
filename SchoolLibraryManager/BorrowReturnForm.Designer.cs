@@ -55,7 +55,10 @@ namespace SchoolLibraryManager
             this.chBookCate = new System.Windows.Forms.ColumnHeader();
             this.btnReload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,11 +67,11 @@ namespace SchoolLibraryManager
             this.groupBox1.Controls.Add(this.lblBorrowCount);
             this.groupBox1.Controls.Add(this.lblStudentID);
             this.groupBox1.Controls.Add(this.lblStudentName);
-            this.groupBox1.Location = new System.Drawing.Point(8, 11);
+            this.groupBox1.Location = new System.Drawing.Point(10, 76);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(550, 87);
+            this.groupBox1.Size = new System.Drawing.Size(629, 81);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생 정보";
@@ -76,74 +79,79 @@ namespace SchoolLibraryManager
             // lblOverCount
             // 
             this.lblOverCount.AutoSize = true;
-            this.lblOverCount.Location = new System.Drawing.Point(332, 58);
+            this.lblOverCount.Location = new System.Drawing.Point(379, 54);
             this.lblOverCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOverCount.Name = "lblOverCount";
-            this.lblOverCount.Size = new System.Drawing.Size(50, 15);
+            this.lblOverCount.Size = new System.Drawing.Size(50, 14);
             this.lblOverCount.TabIndex = 11;
             this.lblOverCount.Text = "연체중 :";
             // 
             // lblBorrowCount
             // 
             this.lblBorrowCount.AutoSize = true;
-            this.lblBorrowCount.Location = new System.Drawing.Point(332, 32);
+            this.lblBorrowCount.Location = new System.Drawing.Point(379, 30);
             this.lblBorrowCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBorrowCount.Name = "lblBorrowCount";
-            this.lblBorrowCount.Size = new System.Drawing.Size(54, 15);
+            this.lblBorrowCount.Size = new System.Drawing.Size(53, 14);
             this.lblBorrowCount.TabIndex = 10;
             this.lblBorrowCount.Text = "대여중 : ";
             // 
             // lblStudentID
             // 
             this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Location = new System.Drawing.Point(16, 32);
+            this.lblStudentID.Location = new System.Drawing.Point(18, 30);
             this.lblStudentID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(59, 15);
+            this.lblStudentID.Size = new System.Drawing.Size(58, 14);
             this.lblStudentID.TabIndex = 9;
             this.lblStudentID.Text = "학생 학번";
             // 
             // lblStudentName
             // 
             this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Location = new System.Drawing.Point(16, 58);
+            this.lblStudentName.Location = new System.Drawing.Point(18, 54);
             this.lblStudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(59, 15);
+            this.lblStudentName.Size = new System.Drawing.Size(58, 14);
             this.lblStudentName.TabIndex = 8;
             this.lblStudentName.Text = "학생 이름";
             // 
             // btnBookSave
             // 
-            this.btnBookSave.Location = new System.Drawing.Point(465, 626);
+            this.btnBookSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookSave.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookSave.Location = new System.Drawing.Point(533, 629);
             this.btnBookSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookSave.Name = "btnBookSave";
-            this.btnBookSave.Size = new System.Drawing.Size(93, 30);
+            this.btnBookSave.Size = new System.Drawing.Size(106, 28);
             this.btnBookSave.TabIndex = 3;
             this.btnBookSave.Text = "저장";
-            this.btnBookSave.UseVisualStyleBackColor = true;
+            this.btnBookSave.UseVisualStyleBackColor = false;
             this.btnBookSave.Click += new System.EventHandler(this.btnBookSave_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 129);
+            this.label3.Location = new System.Drawing.Point(10, 165);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 15);
+            this.label3.Size = new System.Drawing.Size(58, 14);
             this.label3.TabIndex = 7;
             this.label3.Text = "보유 도서";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 379);
+            this.label4.Location = new System.Drawing.Point(10, 399);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 15);
+            this.label4.Size = new System.Drawing.Size(70, 14);
             this.label4.TabIndex = 8;
             this.label4.Text = "학생 대여중";
             // 
             // lvwBRStuList
             // 
+            this.lvwBRStuList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lvwBRStuList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chbookno,
             this.chBookIsbn,
@@ -153,11 +161,11 @@ namespace SchoolLibraryManager
             this.lvwBRStuList.FullRowSelect = true;
             this.lvwBRStuList.GridLines = true;
             this.lvwBRStuList.HideSelection = false;
-            this.lvwBRStuList.Location = new System.Drawing.Point(12, 396);
+            this.lvwBRStuList.Location = new System.Drawing.Point(10, 415);
             this.lvwBRStuList.Margin = new System.Windows.Forms.Padding(2);
             this.lvwBRStuList.MultiSelect = false;
             this.lvwBRStuList.Name = "lvwBRStuList";
-            this.lvwBRStuList.Size = new System.Drawing.Size(546, 220);
+            this.lvwBRStuList.Size = new System.Drawing.Size(629, 206);
             this.lvwBRStuList.TabIndex = 9;
             this.lvwBRStuList.UseCompatibleStateImageBehavior = false;
             this.lvwBRStuList.View = System.Windows.Forms.View.Details;
@@ -190,17 +198,22 @@ namespace SchoolLibraryManager
             // 
             // btnBookCancle
             // 
-            this.btnBookCancle.Location = new System.Drawing.Point(368, 626);
+            this.btnBookCancle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookCancle.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookCancle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnBookCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookCancle.Location = new System.Drawing.Point(417, 629);
             this.btnBookCancle.Margin = new System.Windows.Forms.Padding(2);
             this.btnBookCancle.Name = "btnBookCancle";
-            this.btnBookCancle.Size = new System.Drawing.Size(93, 30);
+            this.btnBookCancle.Size = new System.Drawing.Size(106, 28);
             this.btnBookCancle.TabIndex = 10;
             this.btnBookCancle.Text = "취소";
-            this.btnBookCancle.UseVisualStyleBackColor = true;
+            this.btnBookCancle.UseVisualStyleBackColor = false;
             this.btnBookCancle.Click += new System.EventHandler(this.btnBookCancle_Click);
             // 
             // lvwBRBookList
             // 
+            this.lvwBRBookList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lvwBRBookList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -213,11 +226,11 @@ namespace SchoolLibraryManager
             this.lvwBRBookList.FullRowSelect = true;
             this.lvwBRBookList.GridLines = true;
             this.lvwBRBookList.HideSelection = false;
-            this.lvwBRBookList.Location = new System.Drawing.Point(12, 146);
+            this.lvwBRBookList.Location = new System.Drawing.Point(10, 181);
             this.lvwBRBookList.Margin = new System.Windows.Forms.Padding(2);
             this.lvwBRBookList.MultiSelect = false;
             this.lvwBRBookList.Name = "lvwBRBookList";
-            this.lvwBRBookList.Size = new System.Drawing.Size(546, 220);
+            this.lvwBRBookList.Size = new System.Drawing.Size(629, 206);
             this.lvwBRBookList.TabIndex = 11;
             this.lvwBRBookList.UseCompatibleStateImageBehavior = false;
             this.lvwBRBookList.View = System.Windows.Forms.View.Details;
@@ -231,7 +244,7 @@ namespace SchoolLibraryManager
             // columnHeader2
             // 
             this.columnHeader2.Text = "도서명";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 170;
             // 
             // chBookWriter
             // 
@@ -241,6 +254,7 @@ namespace SchoolLibraryManager
             // chBookPub
             // 
             this.chBookPub.Text = "출판사";
+            this.chBookPub.Width = 70;
             // 
             // chBookYear
             // 
@@ -259,32 +273,58 @@ namespace SchoolLibraryManager
             // chBookCate
             // 
             this.chBookCate.Text = "분류번호";
+            this.chBookCate.Width = 70;
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(12, 626);
+            this.btnReload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnReload.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnReload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReload.Location = new System.Drawing.Point(10, 629);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(93, 30);
+            this.btnReload.Size = new System.Drawing.Size(106, 28);
             this.btnReload.TabIndex = 12;
             this.btnReload.Text = "초기화";
-            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 374);
+            this.label1.Location = new System.Drawing.Point(477, 394);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 15);
+            this.label1.Size = new System.Drawing.Size(130, 14);
             this.label1.TabIndex = 13;
             this.label1.Text = "↑ 더블클릭하여 이동 ↓";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtTitle);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(656, 63);
+            this.panel1.TabIndex = 56;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.AutoSize = true;
+            this.txtTitle.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtTitle.Location = new System.Drawing.Point(202, 9);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(255, 44);
+            this.txtTitle.TabIndex = 0;
+            this.txtTitle.Text = "대여 반납 관리";
+            // 
             // BorrowReturnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 664);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.ClientSize = new System.Drawing.Size(652, 670);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lvwBRBookList);
@@ -294,6 +334,9 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBookSave);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowReturnForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -301,6 +344,8 @@ namespace SchoolLibraryManager
             this.Load += new System.EventHandler(this.BorrowReturnForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +383,7 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Label testestest;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label txtTitle;
     }
 }
