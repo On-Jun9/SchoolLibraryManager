@@ -36,9 +36,11 @@ namespace SchoolLibraryManager
             Fillcombobox(myDB);
 
             this.Text = "추가";
+            this.txtTitle.Text = "학생 추가";
             if (flag == "modify")//수정시
             {
                 this.Text = "수정";
+                this.txtTitle.Text = "학생 수정";
                 DataSet myDS = myDB.ModifyStudent(_userId);
                 DataTable myDT = myDS.Tables[0];
                 this.txtStudentId.Text = _userId;
@@ -102,59 +104,68 @@ namespace SchoolLibraryManager
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MyDB myDB = new MyDB();
-
-            ArrayList formData = new ArrayList();
-            formData.Add(this.txtStudentId.Text);//0
-            formData.Add(this.txtStudentName.Text);//1
-            formData.Add(this.dtpBirth.Value.ToString("yyyy-MM-dd"));//2
-            formData.Add(this.cboGender.SelectedItem + "");//3
-            formData.Add(this.txtPhone.Text);//4
-            formData.Add(this.txtZip.Text);//5
-            formData.Add(this.txtEmail.Text);//6
-            formData.Add(this.dtpAdmit.Value.ToString("yyyy-MM-dd"));//7
-            formData.Add(this.cboMajor.SelectedItem + "");//8
-            formData.Add(this.cboRegi.SelectedItem + "");//9
-
-            if(this.txtStudentId.Text.Trim() == "" || this.txtStudentName.Text.Trim() == "")
+            try
             {
-                MessageBox.Show($"학번, 이름 은 필수 값 입니다.", "저장 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (this.txtStudentId.Text.Trim() == "")
-                    this.txtStudentId.Focus();
-                else if (this.txtStudentName.Text.Trim() == "")
-                    this.txtStudentName.Focus();
+                MyDB myDB = new MyDB();
+
+                ArrayList formData = new ArrayList();
+                formData.Add(this.txtStudentId.Text);//0
+                formData.Add(this.txtStudentName.Text);//1
+                formData.Add(this.dtpBirth.Value.ToString("yyyy-MM-dd"));//2
+                formData.Add(this.cboGender.SelectedItem + "");//3
+                formData.Add(this.txtPhone.Text);//4
+                formData.Add(this.txtZip.Text);//5
+                formData.Add(this.txtEmail.Text);//6
+                formData.Add(this.dtpAdmit.Value.ToString("yyyy-MM-dd"));//7
+                formData.Add(this.cboMajor.SelectedItem + "");//8
+                formData.Add(this.cboRegi.SelectedItem + "");//9
+
+                if (this.txtStudentId.Text.Trim() == "" || this.txtStudentName.Text.Trim() == "")
+                {
+                    MessageBox.Show($"학번, 이름 은 필수 값 입니다.", "저장 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (this.txtStudentId.Text.Trim() == "")
+                        this.txtStudentId.Focus();
+                    else if (this.txtStudentName.Text.Trim() == "")
+                        this.txtStudentName.Focus();
+                }
+
+                else if (flag == "modify")//수정시
+                {
+                    int modifyVal = myDB.ModifyStuService(formData);
+                    if (modifyVal == 0)
+                    {
+                        MessageBox.Show($"수정 실패!", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"수정 완료!", "수정", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+
+                    }
+                }
+                else//추가시
+                {
+                    int insertVal = myDB.InsertStuService(formData);
+                    if (insertVal == 0)
+                    {
+                        MessageBox.Show($"추가 실패!", "추가 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"추가 완료!", "추가", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"값을 확인해 주세요", "실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            else if (flag == "modify")//수정시
-            {
-                int modifyVal = myDB.ModifyStuService(formData);
-                if (modifyVal == 0)
-                {
-                    MessageBox.Show($"수정 실패!", "수정 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show($"수정 완료!", "수정", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    this.Close();
-
-                }
-            }
-            else//추가시
-            {
-                int insertVal = myDB.InsertStuService(formData);
-                if (insertVal == 0)
-                {
-                    MessageBox.Show($"추가 실패!", "추가 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show($"추가 완료!", "추가", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    this.Close();
-
-                }
-            }
+           
         }
 
         private void txtStudentId_TextChanged(object sender, EventArgs e)

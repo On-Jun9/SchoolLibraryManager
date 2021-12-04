@@ -55,8 +55,11 @@ namespace SchoolLibraryManager
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnStuReload = new System.Windows.Forms.Button();
             this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.cmsStudentMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,11 +69,11 @@ namespace SchoolLibraryManager
             this.groupBox1.Controls.Add(this.lblLeaveStudent);
             this.groupBox1.Controls.Add(this.lblAttendingStudent);
             this.groupBox1.Controls.Add(this.lblAllStudent);
-            this.groupBox1.Location = new System.Drawing.Point(27, 38);
+            this.groupBox1.Location = new System.Drawing.Point(20, 88);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(168, 145);
+            this.groupBox1.Size = new System.Drawing.Size(192, 135);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "학생현황";
@@ -78,55 +81,56 @@ namespace SchoolLibraryManager
             // lblexpelledStudent
             // 
             this.lblexpelledStudent.AutoSize = true;
-            this.lblexpelledStudent.Location = new System.Drawing.Point(12, 118);
+            this.lblexpelledStudent.Location = new System.Drawing.Point(14, 110);
             this.lblexpelledStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblexpelledStudent.Name = "lblexpelledStudent";
-            this.lblexpelledStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblexpelledStudent.Size = new System.Drawing.Size(83, 14);
             this.lblexpelledStudent.TabIndex = 9;
             this.lblexpelledStudent.Text = "재적 학생 수 : ";
             // 
             // lblGraduatedStudent
             // 
             this.lblGraduatedStudent.AutoSize = true;
-            this.lblGraduatedStudent.Location = new System.Drawing.Point(12, 95);
+            this.lblGraduatedStudent.Location = new System.Drawing.Point(14, 89);
             this.lblGraduatedStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGraduatedStudent.Name = "lblGraduatedStudent";
-            this.lblGraduatedStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblGraduatedStudent.Size = new System.Drawing.Size(83, 14);
             this.lblGraduatedStudent.TabIndex = 8;
             this.lblGraduatedStudent.Text = "졸업 학생 수 : ";
             // 
             // lblLeaveStudent
             // 
             this.lblLeaveStudent.AutoSize = true;
-            this.lblLeaveStudent.Location = new System.Drawing.Point(12, 72);
+            this.lblLeaveStudent.Location = new System.Drawing.Point(14, 67);
             this.lblLeaveStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLeaveStudent.Name = "lblLeaveStudent";
-            this.lblLeaveStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblLeaveStudent.Size = new System.Drawing.Size(83, 14);
             this.lblLeaveStudent.TabIndex = 7;
             this.lblLeaveStudent.Text = "휴학 학생 수 : ";
             // 
             // lblAttendingStudent
             // 
             this.lblAttendingStudent.AutoSize = true;
-            this.lblAttendingStudent.Location = new System.Drawing.Point(12, 49);
+            this.lblAttendingStudent.Location = new System.Drawing.Point(14, 46);
             this.lblAttendingStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttendingStudent.Name = "lblAttendingStudent";
-            this.lblAttendingStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblAttendingStudent.Size = new System.Drawing.Size(83, 14);
             this.lblAttendingStudent.TabIndex = 6;
             this.lblAttendingStudent.Text = "재학 학생 수 : ";
             // 
             // lblAllStudent
             // 
             this.lblAllStudent.AutoSize = true;
-            this.lblAllStudent.Location = new System.Drawing.Point(12, 26);
+            this.lblAllStudent.Location = new System.Drawing.Point(14, 24);
             this.lblAllStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAllStudent.Name = "lblAllStudent";
-            this.lblAllStudent.Size = new System.Drawing.Size(86, 15);
+            this.lblAllStudent.Size = new System.Drawing.Size(83, 14);
             this.lblAllStudent.TabIndex = 5;
             this.lblAllStudent.Text = "전체 학생 수 : ";
             // 
             // lvwStudentList
             // 
+            this.lvwStudentList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lvwStudentList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chStuId,
             this.chStuName,
@@ -139,14 +143,15 @@ namespace SchoolLibraryManager
             this.lvwStudentList.FullRowSelect = true;
             this.lvwStudentList.GridLines = true;
             this.lvwStudentList.HideSelection = false;
-            this.lvwStudentList.Location = new System.Drawing.Point(229, 38);
+            this.lvwStudentList.Location = new System.Drawing.Point(231, 89);
             this.lvwStudentList.Margin = new System.Windows.Forms.Padding(2);
             this.lvwStudentList.MultiSelect = false;
             this.lvwStudentList.Name = "lvwStudentList";
-            this.lvwStudentList.Size = new System.Drawing.Size(555, 380);
+            this.lvwStudentList.Size = new System.Drawing.Size(634, 355);
             this.lvwStudentList.TabIndex = 1;
             this.lvwStudentList.UseCompatibleStateImageBehavior = false;
             this.lvwStudentList.View = System.Windows.Forms.View.Details;
+            this.lvwStudentList.SelectedIndexChanged += new System.EventHandler(this.lvwStudentList_SelectedIndexChanged);
             this.lvwStudentList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwStudentList_MouseClick);
             // 
             // chStuId
@@ -220,69 +225,104 @@ namespace SchoolLibraryManager
             // 
             // txtSearchStuStuForm
             // 
-            this.txtSearchStuStuForm.Location = new System.Drawing.Point(27, 223);
+            this.txtSearchStuStuForm.Location = new System.Drawing.Point(20, 257);
             this.txtSearchStuStuForm.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchStuStuForm.Name = "txtSearchStuStuForm";
-            this.txtSearchStuStuForm.Size = new System.Drawing.Size(169, 23);
+            this.txtSearchStuStuForm.Size = new System.Drawing.Size(193, 22);
             this.txtSearchStuStuForm.TabIndex = 2;
             this.txtSearchStuStuForm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchStuStuForm_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 206);
+            this.label1.Location = new System.Drawing.Point(20, 234);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.Size = new System.Drawing.Size(60, 14);
             this.label1.TabIndex = 3;
             this.label1.Text = "학번/이름";
             // 
             // btnSearchStudent
             // 
-            this.btnSearchStudent.Location = new System.Drawing.Point(115, 250);
+            this.btnSearchStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnSearchStudent.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnSearchStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStudent.Location = new System.Drawing.Point(123, 286);
             this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
-            this.btnSearchStudent.Size = new System.Drawing.Size(80, 30);
+            this.btnSearchStudent.Size = new System.Drawing.Size(90, 30);
             this.btnSearchStudent.TabIndex = 4;
             this.btnSearchStudent.Text = "검색";
-            this.btnSearchStudent.UseVisualStyleBackColor = true;
+            this.btnSearchStudent.UseVisualStyleBackColor = false;
             this.btnSearchStudent.Click += new System.EventHandler(this.btnSearchStudent_Click);
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(27, 393);
+            this.btnAddStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnAddStudent.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnAddStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStudent.Location = new System.Drawing.Point(20, 404);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(168, 25);
+            this.btnAddStudent.Size = new System.Drawing.Size(193, 40);
             this.btnAddStudent.TabIndex = 5;
             this.btnAddStudent.Text = "학생 추가";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnStuReload
             // 
-            this.btnStuReload.Location = new System.Drawing.Point(616, 422);
+            this.btnStuReload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnStuReload.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnStuReload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.btnStuReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStuReload.Location = new System.Drawing.Point(20, 286);
             this.btnStuReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnStuReload.Name = "btnStuReload";
-            this.btnStuReload.Size = new System.Drawing.Size(168, 25);
+            this.btnStuReload.Size = new System.Drawing.Size(90, 30);
             this.btnStuReload.TabIndex = 6;
             this.btnStuReload.Text = "초기화";
-            this.btnStuReload.UseVisualStyleBackColor = true;
+            this.btnStuReload.UseVisualStyleBackColor = false;
             this.btnStuReload.Click += new System.EventHandler(this.btnStuReload_Click);
             // 
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
-            this.lblSearchLabel.Location = new System.Drawing.Point(229, 21);
+            this.lblSearchLabel.Location = new System.Drawing.Point(231, 73);
             this.lblSearchLabel.Name = "lblSearchLabel";
-            this.lblSearchLabel.Size = new System.Drawing.Size(0, 15);
+            this.lblSearchLabel.Size = new System.Drawing.Size(0, 14);
             this.lblSearchLabel.TabIndex = 8;
+            this.lblSearchLabel.Click += new System.EventHandler(this.lblSearchLabel_Click);
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.AutoSize = true;
+            this.txtTitle.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtTitle.Location = new System.Drawing.Point(359, 9);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(173, 44);
+            this.txtTitle.TabIndex = 0;
+            this.txtTitle.Text = "학생 관리";
+            this.txtTitle.Click += new System.EventHandler(this.txtTitle_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtTitle);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(887, 63);
+            this.panel1.TabIndex = 58;
             // 
             // StudentListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 467);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.ClientSize = new System.Drawing.Size(886, 475);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.btnStuReload);
             this.Controls.Add(this.btnAddStudent);
@@ -291,6 +331,9 @@ namespace SchoolLibraryManager
             this.Controls.Add(this.txtSearchStuStuForm);
             this.Controls.Add(this.lvwStudentList);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -299,6 +342,8 @@ namespace SchoolLibraryManager
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.cmsStudentMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +379,7 @@ namespace SchoolLibraryManager
         private System.Windows.Forms.ToolStripMenuItem tsrDele;
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.Label lblexpelledStudent;
+        private System.Windows.Forms.Label txtTitle;
+        private System.Windows.Forms.Panel panel1;
     }
 }
